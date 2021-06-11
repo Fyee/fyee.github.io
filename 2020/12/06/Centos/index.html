@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="zh-CN,en,default">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="-7Te-dPYac5Msazv4o6OB4OBy1OpNOyApl-lssm14B0">
+  <meta name="baidu-site-verification" content="code-PQeJAFGJgn">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"fyee.github.io","root":"/","images":"/images","scheme":"Gemini","version":"8.1.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+<meta name="description" content="Centos一些常用操作，端口开启，虚拟机设置等">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Centos相关的操作">
+<meta property="og:url" content="https://fyee.github.io/2020/12/06/Centos/index.html">
+<meta property="og:site_name" content="Talk is cheap.Show me the code">
+<meta property="og:description" content="Centos一些常用操作，端口开启，虚拟机设置等">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://fyee.github.io/2020/12/06/Centos/vm.png">
+<meta property="og:image" content="https://fyee.github.io/2020/12/06/Centos/disk.png">
+<meta property="og:image" content="https://fyee.github.io/2020/12/06/Centos/add_disk.png">
+<meta property="og:image" content="https://fyee.github.io/2020/12/06/Centos/add_disk_completed.png">
+<meta property="article:published_time" content="2020-12-06T10:46:46.000Z">
+<meta property="article:modified_time" content="2021-06-11T03:44:08.923Z">
+<meta property="article:author" content="Atom">
+<meta property="article:tag" content="centos">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://fyee.github.io/2020/12/06/Centos/vm.png">
+
+
+<link rel="canonical" href="https://fyee.github.io/2020/12/06/Centos/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+<title>Centos相关的操作 | Talk is cheap.Show me the code</title>
+  
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Talk is cheap.Show me the code" type="application/atom+xml">
+<link rel="alternate" href="/rss2.xml" title="Talk is cheap.Show me the code" type="application/rss+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Talk is cheap.Show me the code</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/about.html" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <section class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Vim"><span class="nav-number">1.</span> <span class="nav-text">Vim</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%9C%80%E5%B0%8F%E5%8C%96%E5%AE%89%E8%A3%85%E5%90%8E%E8%81%94%E7%BD%91%E8%AE%BE%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">虚拟机最小化安装后联网设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Git"><span class="nav-number">3.</span> <span class="nav-text">安装Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AB%AF%E5%8F%A3%E5%BC%80%E6%94%BE"><span class="nav-number">4.</span> <span class="nav-text">端口开放</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E6%89%BE%E5%B9%B6%E6%B8%85%E7%90%86%E5%A4%A7%E6%96%87%E4%BB%B6"><span class="nav-number">5.</span> <span class="nav-text">查找并清理大文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B0%B4%E5%8D%B0%E5%9B%BE%E7%89%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98"><span class="nav-number">6.</span> <span class="nav-text">水印图片乱码问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%8D%E5%AF%86%E7%99%BB%E9%99%86"><span class="nav-number">7.</span> <span class="nav-text">免密登陆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B8%85%E9%99%A4buffer-cache"><span class="nav-number">8.</span> <span class="nav-text">清除buffer&#x2F;cache</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VMware%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8BCentos%E6%89%A9%E5%AE%B9"><span class="nav-number">9.</span> <span class="nav-text">VMware虚拟机下Centos扩容</span></a></li></ol></div>
+        </section>
+        <!--/noindex-->
+
+        <section class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Atom"
+      src="https://raw.githubusercontent.com/Fyee/blog.img/master/371608714711_.pic.jpg">
+  <p class="site-author-name" itemprop="name">Atom</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Fyee" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Fyee" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:junbo.atom@gmail.com" title="E-Mail → mailto:junbo.atom@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/rss2.xml" title="RSS → &#x2F;rss2.xml"><i class="fa fa-rss fa-fw"></i></a>
+      </span>
+  </div>
+
+
+
+        </section>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/Fyee" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://fyee.github.io/2020/12/06/Centos/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://raw.githubusercontent.com/Fyee/blog.img/master/371608714711_.pic.jpg">
+      <meta itemprop="name" content="Atom">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Talk is cheap.Show me the code">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Centos相关的操作
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-12-06 18:46:46" itemprop="dateCreated datePublished" datetime="2020-12-06T18:46:46+08:00">2020-12-06</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-06-11 11:44:08" itemprop="dateModified" datetime="2021-06-11T11:44:08+08:00">2021-06-11</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%BF%90%E7%BB%B4/" itemprop="url" rel="index"><span itemprop="name">运维</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>Centos一些常用操作，端口开启，虚拟机设置等</p>
+<a id="more"></a>
+<h2 id="Vim"><a href="#Vim" class="headerlink" title="Vim"></a>Vim</h2><ol>
+<li>快速格式化代码<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">//移动光标至顶行
+gg 
+//选择模式
+shift+v 
+//移动光标到最尾行（全选）
+G 
+//立马格式化
+<span class="token operator">=</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+</li>
+</ol>
+<h2 id="虚拟机最小化安装后联网设置"><a href="#虚拟机最小化安装后联网设置" class="headerlink" title="虚拟机最小化安装后联网设置"></a>虚拟机最小化安装后联网设置</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> /etc/sysconfig/network-scipts
+<span class="token function">vi</span> ifcfg-eth0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>修改ONBOOT=yes后保存</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token assign-left variable">ONBOOT</span><span class="token operator">=</span>yes<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>重启网络</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">systemctl restart network<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>Centos8使用这个命令</p>
+<pre class="line-numbers language-none"><code class="language-none">nmcli c reload<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h2><ul>
+<li>yum安装<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">yum <span class="token function">install</span> <span class="token function">git</span> -y
+<span class="token function">git</span> --version<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li>yum安装的版本低，在此基础上升级<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">yum <span class="token function">install</span> curl-devel expat-devel gettext-devel openssl-devel zlib-devel gcc perl-ExtUtils-MakeMaker -y<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li>下载安装包<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">wget</span> https://github.com/git/git/archive/v2.27.0.zip<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li>解压&amp;进入目录<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">unzip</span> v2.27.0.zip
+<span class="token builtin class-name">cd</span> git-2.27.0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li>编译安装<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">make</span> <span class="token assign-left variable">prefix</span><span class="token operator">=</span>/usr/local/git all
+<span class="token function">make</span> <span class="token assign-left variable">prefix</span><span class="token operator">=</span>/usr/local/git <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li>替换yum安装时的路径<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">rm</span> -rf /usr/bin/git
+<span class="token function">ln</span> -s /usr/local/git/bin/git /usr/bin/git<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li>重新查看版本<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> --version<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+git version 2.27.0</li>
+</ul>
+<h2 id="端口开放"><a href="#端口开放" class="headerlink" title="端口开放"></a>端口开放</h2><ul>
+<li><p>查看已打开的端口 </p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">netstat</span> -anp<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>查看指定端口是否已开 </p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">firewall-cmd --query-port<span class="token operator">=</span><span class="token number">666</span>/tcp<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>若此提示 Firewall is not running 表示没有开启防火墙，需要查看防火墙状态。</p>
+</li>
+<li><p>查看防火墙状态  </p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">systemctl status firewalld<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>running 状态即防火墙已经开启<br>dead 状态即防火墙未开启</p>
+</li>
+<li><p>开启防火墙</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">systemctl start firewalld
+<span class="token comment">#老版本命令</span>
+<span class="token function">service</span> firewalld start  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>没有任何提示即开启成功</p>
+</li>
+<li><p>关闭防火墙 </p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">systemctl stop firewalld<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>centos7.3 上述方式可能无法开启，<br>可以先</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">systemctl unmask firewalld.service <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>然后 </p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">systemctl start firewalld.service<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>查看想开的端口是否已开 </p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">firewall-cmd --query-port<span class="token operator">=</span><span class="token number">666</span>/tcp    <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>提示no表示未开</p>
+</li>
+<li><p>开起永久端口号 </p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">firewall-cmd --add-port<span class="token operator">=</span><span class="token number">666</span>/tcp --permanent<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>提示success表示成功</p>
+</li>
+<li><p>重新载入配置<br>注意<br>添加规则之后，需要执行此命令</p>
+</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">firewall-cmd --reload  <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+<ul>
+<li><p>再次查看想开的端口是否已开  </p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">firewall-cmd --query-port<span class="token operator">=</span><span class="token number">666</span>/tcp  <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>提示yes表示成功</p>
+</li>
+<li><p>若移除端口 </p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">firewall-cmd --permanent --remove-port<span class="token operator">=</span><span class="token number">666</span>/tcp<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>修改iptables  有些版本需要安装iptables-services </p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">yum <span class="token function">install</span> iptables-services <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>然后进目录修改</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">/etc/sysconfig/iptables  <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>修改内容</p>
+</li>
+<li><p>批量开放端口</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">firewall-cmd --permanent --zone<span class="token operator">=</span>public --add-port<span class="token operator">=</span><span class="token number">100</span>-500/tcp
+firewall-cmd --permanent --zone<span class="token operator">=</span>public --add-port<span class="token operator">=</span><span class="token number">100</span>-500/udp
+firewall-cmd --reload<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="查找并清理大文件"><a href="#查找并清理大文件" class="headerlink" title="查找并清理大文件"></a>查找并清理大文件</h2></li>
+<li><p>命令</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">du</span> -h --max-depth<span class="token operator">=</span>1du<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>参数说明<br>用于统计linux中文件或目录所占磁盘空间的大小du参数<br>m：以M为单位展示查询结果<br>&#45;h：以K、M、G为单位展示查询结果，提高信息可读性<br>&#45;&#45;max-depth=1：其中，数字“1”是指查询结果中最多显示的目录层数，这里指最多显示一层目录。  </p>
+</li>
+<li><p>清空内容</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#此命令会把/var/log目录中的big.log文件内容清除，而又不删除big.log文件</span>
+<span class="token builtin class-name">echo</span> <span class="token operator">></span> /var/log/big.log
+<span class="token comment">#此命令能与"echo > /var/log/big.log"达到相同效果，不过，命令执行后，需要用"Ctrl + d"结束</span>
+<span class="token function">cat</span> <span class="token operator">></span> /var/log/big.log
+<span class="token comment">#此命令会把big.log文件内容清空，而不删除文件</span>
+<span class="token function">clear</span> <span class="token operator">></span> /var/log/big.log<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+</li>
+</ul>
+<h2 id="水印图片乱码问题"><a href="#水印图片乱码问题" class="headerlink" title="水印图片乱码问题"></a>水印图片乱码问题</h2><p>Centos没有中文字体导致java程序生成的中文水印图片文字乱码（不显示），可以将windows中的中文字体复制到centos中，或者在网上找到免费并且没有版权的中文字体，安装即可。</p>
+<ul>
+<li>下载字体后，进入目录,创建自己的字体目录<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> /usr/share/fonts/
+<span class="token function">mkdir</span> myfonts<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li>将下载好的字体上传到myfonts目录下，安装字体<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">mkfontscale
+mkfontdir
+fc-cache -fv<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li>查看安装好的字体<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">fc-list<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li>重启java服务，再次生成的图片水印图片已经正常显示中文</li>
+</ul>
+<h2 id="免密登陆"><a href="#免密登陆" class="headerlink" title="免密登陆"></a>免密登陆</h2><ul>
+<li>执行命令,并输入密码</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># ssh-copy-id root@192.168.2.23</span>
+ssh-copy-id user@host<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ul>
+<li>第二次登陆就不需要输入密码了</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># ssh root@192.168.2.23</span>
+<span class="token function">ssh</span> user@host<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="清除buffer-cache"><a href="#清除buffer-cache" class="headerlink" title="清除buffer/cache"></a>清除buffer/cache</h2><p><a target="_blank" rel="noopener" href="https://linux.cn/article-5627-1.html">原文链接</a><br>提示<br>生产环境建议使用<code>echo 1</code>，不建议使用<code>echo 3</code></p>
+<ol>
+<li>仅清除页面缓存（PageCache）<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sync</span><span class="token punctuation">;</span> <span class="token builtin class-name">echo</span> <span class="token number">1</span> <span class="token operator">></span> /proc/sys/vm/drop_caches<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li>清除目录项和inode<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sync</span><span class="token punctuation">;</span> <span class="token builtin class-name">echo</span> <span class="token number">2</span> <span class="token operator">></span> /proc/sys/vm/drop_caches<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li>清除页面缓存，目录项和inode<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sync</span><span class="token punctuation">;</span> <span class="token builtin class-name">echo</span> <span class="token number">3</span> <span class="token operator">></span> /proc/sys/vm/drop_caches<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+</li>
+</ol>
+<h2 id="VMware虚拟机下Centos扩容"><a href="#VMware虚拟机下Centos扩容" class="headerlink" title="VMware虚拟机下Centos扩容"></a>VMware虚拟机下Centos扩容</h2><ol>
+<li>首先在<code>Vmware</code>中设置磁盘扩容的大小<br><img src="/2020/12/06/Centos/vm.png"></li>
+<li>使用<code>fdisk</code>命令添加新的分区</li>
+</ol>
+<ul>
+<li><p>查看当前系统已有分区</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">fdisk</span> -l<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>挂在新的分区</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">fdisk</span> /dev/sda<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>命令说明</p>
+<pre class="line-numbers language-none"><code class="language-none">[root@localhost ~]# fdisk &#x2F;dev&#x2F;sda
+　　Command (m for help): 在这里按m ，就会输出帮助；
+　　Command action
+　　a toggle a bootable flag
+　　b edit bsd disklabel
+　　c toggle the dos compatibility flag
+　　d delete a partition 注：这是删除一个分区的动作；
+　　l list known partition types 注：l是列出分区类型，以供我们设置相应分区的类型；
+　　m print this menu 注：m 是列出帮助信息；
+　　n add a new partition 注：添加一个分区；
+　　o create a new empty DOS partition table
+　　p print the partition table 注：p列出分区表；
+　　q quit without saving changes 注：不保存退出；
+　　s create a new empty Sun disklabel
+　　t change a partition&#39;s system id 注：t 改变分区类型；
+　　u change display&#x2F;entry units
+　　v verify the partition table
+　　w write table to disk and exit 注：把分区表写入硬盘并退出；
+　　x extra functionality (experts only) 注：扩展应用，专家功能；<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>步骤截图<br><img src="/2020/12/06/Centos/disk.png"><br>操作完成后重启系统<code>reboot</code>,重启后再次使用命令<code>fdisk -l</code>可以看到新的磁盘<code>/dev/sda3</code>已经挂载</p>
+</li>
+</ul>
+<ol start="3">
+<li><p>格式化新挂载的磁盘</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">mkfs.ext3 /dev/sda3<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>查看需要挂载的磁盘名称<br>使用<code>df -lh</code>命令查看当前磁盘空间占用，找到自己需要扩容的磁盘名称</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># df -lh</span>
+Filesystem               Size  Used Avail Use% Mounted on
+devtmpfs                 <span class="token number">3</span>.8G     <span class="token number">0</span>  <span class="token number">3</span>.8G   <span class="token number">0</span>% /dev
+tmpfs                    <span class="token number">3</span>.9G     <span class="token number">0</span>  <span class="token number">3</span>.9G   <span class="token number">0</span>% /dev/shm
+tmpfs                    <span class="token number">3</span>.9G   12M  <span class="token number">3</span>.8G   <span class="token number">1</span>% /run
+tmpfs                    <span class="token number">3</span>.9G     <span class="token number">0</span>  <span class="token number">3</span>.9G   <span class="token number">0</span>% /sys/fs/cgroup
+/dev/mapper/centos-root   50G  <span class="token number">4</span>.7G   46G  <span class="token number">10</span>% /
+/dev/mapper/centos-home   26G   26G  140K <span class="token number">100</span>% /home
+/dev/sda1               1014M  238M  777M  <span class="token number">24</span>% /boot
+tmpfs                    781M     <span class="token number">0</span>  781M   <span class="token number">0</span>% /run/user/0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>比如我要扩展的磁盘为<code>/dev/mapper/centos-home</code>,记住这个名字，在下面的步骤需要用到</p>
+</li>
+<li><p>使用lvm扩展分区</p>
+</li>
+</ol>
+<ul>
+<li>使用命令<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">lvm
+<span class="token comment"># 创建物理卷</span>
+pvcreate /dev/sda3
+<span class="token comment"># 查看当前卷信息</span>
+pvdisplay<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>将<code>/dev/sda3</code>加入的和<code>/dev/sda2</code>一样的VG Name中<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">vgextend <span class="token operator">&lt;</span>你的VG Name<span class="token operator">></span> /dev/sda3
+<span class="token comment"># 如vgextend centos /dev/sda3</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li>添加容量到你需要添加的磁盘中(第4步查看的磁盘名称)<br>为了防止出错这里的写199G比我添加的120G小<br>如：<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">lvextend -L +199G /dev/mapper/centos-home<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<img src="/2020/12/06/Centos/add_disk.png"></li>
+</ul>
+<ol start="6">
+<li>最后重新调整逻辑分区<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">xfs_growfs /dev/mapper/centos-home<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+执行成功后重新输入<code>df -lh</code>可以看到磁盘空间已经添加完成<br><img src="/2020/12/06/Centos/add_disk_completed.png"></li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/centos/" rel="tag"># centos</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/12/04/WebSite/" rel="prev" title="我常用的一些网站">
+                  <i class="fa fa-chevron-left"></i> 我常用的一些网站
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2020/12/08/CleanCodeJs/" rel="next" title="写出优雅的JS代码">
+                  写出优雅的JS代码 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Atom</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1.7.0/dist/gitalk.css">
+
+<script>
+NexT.utils.loadComments('#gitalk-container', () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1.7.0/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '55267aacd9ab25ee57d9',
+      clientSecret: '296b6d388a03aa344d55a0a06c05a66774fdff32',
+      repo        : 'fyee.github.io',
+      owner       : 'Fyee',
+      admin       : ['Fyee'],
+      id          : '9640874d53f72535f75ac1608a0b5c3a',
+        language: '',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+</body>
+</html>
