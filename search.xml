@@ -699,21 +699,6 @@ customElements<span class="token punctuation">.</span><span class="token functio
       </categories>
   </entry>
   <entry>
-    <title>Git</title>
-    <url>/2021/01/22/Git/</url>
-    <content><![CDATA[<p>Git操作</p>
-<a id="more"></a>
-<p><a href="https://learngitbranching.js.org/?locale=zh_CN">Git在线练习</a></p>
-<h2 id="检出部分代码的步骤"><a href="#检出部分代码的步骤" class="headerlink" title="检出部分代码的步骤"></a>检出部分代码的步骤</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">
-<span class="token function">git</span> init <span class="token operator">&lt;</span>project-name<span class="token operator">></span>
-<span class="token builtin class-name">cd</span> <span class="token operator">&lt;</span>project-name<span class="token operator">></span>
-<span class="token function">git</span> remote <span class="token function">add</span> -f origin <span class="token operator">&lt;</span>project-url<span class="token operator">></span>
-<span class="token function">git</span> config core.sparseCheckout <span class="token boolean">true</span>
-<span class="token builtin class-name">echo</span> <span class="token string">"you/want/checkout/floder or files/"</span> <span class="token operator">>></span> .git/info/sparse-checkout
-<span class="token function">git</span> pull origin master
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
-  </entry>
-  <entry>
     <title>前端问题记录</title>
     <url>/2020/12/12/FrontQA/</url>
     <content><![CDATA[<p>记录一下前端开发过程中遇到的问题。</p>
@@ -746,6 +731,21 @@ window<span class="token punctuation">.</span><span class="token function">addEv
       <tags>
         <tag>问题</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Git</title>
+    <url>/2021/01/22/Git/</url>
+    <content><![CDATA[<p>Git操作</p>
+<a id="more"></a>
+<p><a href="https://learngitbranching.js.org/?locale=zh_CN">Git在线练习</a></p>
+<h2 id="检出部分代码的步骤"><a href="#检出部分代码的步骤" class="headerlink" title="检出部分代码的步骤"></a>检出部分代码的步骤</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">
+<span class="token function">git</span> init <span class="token operator">&lt;</span>project-name<span class="token operator">></span>
+<span class="token builtin class-name">cd</span> <span class="token operator">&lt;</span>project-name<span class="token operator">></span>
+<span class="token function">git</span> remote <span class="token function">add</span> -f origin <span class="token operator">&lt;</span>project-url<span class="token operator">></span>
+<span class="token function">git</span> config core.sparseCheckout <span class="token boolean">true</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"you/want/checkout/floder or files/"</span> <span class="token operator">>></span> .git/info/sparse-checkout
+<span class="token function">git</span> pull origin master
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
   </entry>
   <entry>
     <title>Java开发中遇到的问题</title>
@@ -1419,7 +1419,8 @@ yum <span class="token function">install</span> -y cronolog<span aria-hidden="tr
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.13.1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h1 id="测试代码"><a href="#测试代码" class="headerlink" title="测试代码"></a>测试代码</h1><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+<h1 id="测试代码"><a href="#测试代码" class="headerlink" title="测试代码"></a>测试代码</h1><p><a href="https://jsoup.org/cookbook/cleaning-html/whitelist-sanitizer">官方示例代码地址</a></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
 	<span class="token class-name">String</span> content <span class="token operator">=</span> <span class="token string">"&lt;h1>&lt;span onclick=\"alert('测试')\" style=\"background-color: rgb(194, 79, 74); font-style: italic; color: rgb(139, 170, 74);\">测试XSS&lt;/span>&lt;/h1>"</span><span class="token punctuation">;</span>
 	<span class="token class-name">Whitelist</span> whitelist <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Whitelist</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
        <span class="token comment">// 具体标签和属性设置根据实际情况配置</span>
@@ -1436,78 +1437,13 @@ yum <span class="token function">install</span> -y cronolog<span aria-hidden="tr
       </tags>
   </entry>
   <entry>
-    <title>Mac配置</title>
-    <url>/2020/12/04/mac/</url>
-    <content><![CDATA[<p>mac的brew配置以及终端代理</p>
-<a id="more"></a>
-<h2 id="替换Homebrew镜像源"><a href="#替换Homebrew镜像源" class="headerlink" title="替换Homebrew镜像源"></a>替换Homebrew镜像源</h2><p><a href="https://developer.aliyun.com/mirror/homebrew?spm=a2c6h.13651102.0.0.24311b11XFui3N">原文链接</a></p>
-<ol>
-<li>bash终端配置</li>
-</ol>
-<ul>
-<li>替换brew.git:<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span>brew --repo<span class="token variable">)</span></span>"</span>
-<span class="token function">git</span> remote set-url origin https://mirrors.aliyun.com/homebrew/brew.git<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
-<li>替换homebrew-core.git:<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span>brew --repo<span class="token variable">)</span></span>/Library/Taps/homebrew/homebrew-core"</span>
-<span class="token function">git</span> remote set-url origin https://mirrors.aliyun.com/homebrew/homebrew-core.git<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
-<li>应用生效<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew update<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li>替换homebrew-bottles:<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">echo</span> <span class="token string">'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles'</span> <span class="token operator">>></span> ~/.bash_profile
-<span class="token builtin class-name">source</span> ~/.bash_profile<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-</li>
-</ul>
-<ol start="2">
-<li><p>Zsh 终端配置</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 替换brew.git:</span>
-<span class="token builtin class-name">cd</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span>brew --repo<span class="token variable">)</span></span>"</span>
-<span class="token function">git</span> remote set-url origin https://mirrors.aliyun.com/homebrew/brew.git
-<span class="token comment"># 替换homebrew-core.git:</span>
-<span class="token builtin class-name">cd</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span>brew --repo<span class="token variable">)</span></span>/Library/Taps/homebrew/homebrew-core"</span>
-<span class="token function">git</span> remote set-url origin https://mirrors.aliyun.com/homebrew/homebrew-core.git
-<span class="token comment"># 应用生效</span>
-brew update
-<span class="token comment"># 替换homebrew-bottles:</span>
-<span class="token builtin class-name">echo</span> <span class="token string">'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles'</span> <span class="token operator">>></span> ~/.zshrc
-<span class="token builtin class-name">source</span> ~/.zshrc<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p>恢复默认配置</p>
-</li>
-</ol>
-<ul>
-<li>首先执行下述命令:<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 重置brew.git:</span>
-<span class="token builtin class-name">cd</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span>brew --repo<span class="token variable">)</span></span>"</span>
-<span class="token function">git</span> remote set-url origin https://github.com/Homebrew/brew.git
-<span class="token comment"># 重置homebrew-core.git:</span>
-<span class="token builtin class-name">cd</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span>brew --repo<span class="token variable">)</span></span>/Library/Taps/homebrew/homebrew-core"</span>
-<span class="token function">git</span> remote set-url origin https://github.com/Homebrew/homebrew-core.git
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li>然后删掉 HOMEBREW_BOTTLE_DOMAIN 环境变量,将你终端文件<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">~/.bash_profile<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-或者<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">~/.zshrc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-中<pre class="line-numbers language-none"><code class="language-none">HOMEBREW_BOTTLE_DOMAIN<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-行删掉, 并执行<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">source</span> ~/.bash_profile<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-或者<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">source</span> ~/.zshrc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-</li>
-</ul>
-<h2 id="终端走代理"><a href="#终端走代理" class="headerlink" title="终端走代理"></a>终端走代理</h2><ul>
-<li>临时的方式，影响最小<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">export</span> <span class="token assign-left variable">http_proxy</span><span class="token operator">=</span>http://proxyAddress:port<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-e.g.<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">export</span> <span class="token assign-left variable">http_proxy</span><span class="token operator">=</span><span class="token string">"http://127.0.0.1:1087"</span>
-<span class="token builtin class-name">export</span> <span class="token assign-left variable">https_proxy</span><span class="token operator">=</span><span class="token string">"http://127.0.0.1:1087"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
-</ul>
-]]></content>
-      <categories>
-        <category>操作系统</category>
-      </categories>
-      <tags>
-        <tag>mac</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>关于我</title>
     <url>//about.html</url>
     <content><![CDATA[<p>写着玩玩</p>
 <a id="more"></a>
 
 <h1 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h1><ul>
-<li>Email：<a href="mailto:&#106;&#x75;&#110;&#x62;&#x6f;&#46;&#97;&#x74;&#111;&#x6d;&#x40;&#x67;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#x63;&#111;&#x6d;">&#106;&#x75;&#110;&#x62;&#x6f;&#46;&#97;&#x74;&#111;&#x6d;&#x40;&#x67;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#x63;&#111;&#x6d;</a> </li>
+<li>Email：<a href="mailto:&#106;&#117;&#110;&#98;&#x6f;&#x2e;&#97;&#x74;&#111;&#x6d;&#x40;&#103;&#109;&#x61;&#x69;&#108;&#46;&#99;&#111;&#109;">&#106;&#117;&#110;&#98;&#x6f;&#x2e;&#97;&#x74;&#111;&#x6d;&#x40;&#103;&#109;&#x61;&#x69;&#108;&#46;&#99;&#111;&#109;</a> </li>
 <li>手机号：</li>
 <li>微信号：</li>
 </ul>
@@ -1581,7 +1517,7 @@ e.g.<pre class="line-numbers language-bash" data-language="bash"><code class="la
 </ul>
 <h1 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h1><p>感谢您花时间阅读我的简历，期待能有机会和您共事。</p>
 <h1 id="Contact-Details"><a href="#Contact-Details" class="headerlink" title="Contact Details"></a>Contact Details</h1><ul>
-<li>Email: <a href="mailto:&#106;&#x75;&#x6e;&#x62;&#111;&#46;&#x61;&#x74;&#x6f;&#109;&#64;&#103;&#x6d;&#x61;&#105;&#x6c;&#46;&#99;&#111;&#109;">&#106;&#x75;&#x6e;&#x62;&#111;&#46;&#x61;&#x74;&#x6f;&#109;&#64;&#103;&#x6d;&#x61;&#105;&#x6c;&#46;&#99;&#111;&#109;</a> </li>
+<li>Email: <a href="mailto:&#106;&#x75;&#110;&#x62;&#x6f;&#x2e;&#97;&#x74;&#111;&#x6d;&#64;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#46;&#x63;&#x6f;&#x6d;">&#106;&#x75;&#110;&#x62;&#x6f;&#x2e;&#97;&#x74;&#111;&#x6d;&#64;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#46;&#x63;&#x6f;&#x6d;</a> </li>
 <li>Phone:</li>
 <li>Wechat:</li>
 </ul>
@@ -1620,6 +1556,71 @@ e.g.<pre class="line-numbers language-bash" data-language="bash"><code class="la
 </ul>
 <h1 id="Thanks"><a href="#Thanks" class="headerlink" title="Thanks"></a>Thanks</h1><p>Thank you for your time on my resume,I am looking forward to working with you.</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>Mac配置</title>
+    <url>/2020/12/04/mac/</url>
+    <content><![CDATA[<p>mac的brew配置以及终端代理</p>
+<a id="more"></a>
+<h2 id="替换Homebrew镜像源"><a href="#替换Homebrew镜像源" class="headerlink" title="替换Homebrew镜像源"></a>替换Homebrew镜像源</h2><p><a href="https://developer.aliyun.com/mirror/homebrew?spm=a2c6h.13651102.0.0.24311b11XFui3N">原文链接</a></p>
+<ol>
+<li>bash终端配置</li>
+</ol>
+<ul>
+<li>替换brew.git:<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span>brew --repo<span class="token variable">)</span></span>"</span>
+<span class="token function">git</span> remote set-url origin https://mirrors.aliyun.com/homebrew/brew.git<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li>替换homebrew-core.git:<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span>brew --repo<span class="token variable">)</span></span>/Library/Taps/homebrew/homebrew-core"</span>
+<span class="token function">git</span> remote set-url origin https://mirrors.aliyun.com/homebrew/homebrew-core.git<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li>应用生效<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew update<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li>替换homebrew-bottles:<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">echo</span> <span class="token string">'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles'</span> <span class="token operator">>></span> ~/.bash_profile
+<span class="token builtin class-name">source</span> ~/.bash_profile<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+</ul>
+<ol start="2">
+<li><p>Zsh 终端配置</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 替换brew.git:</span>
+<span class="token builtin class-name">cd</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span>brew --repo<span class="token variable">)</span></span>"</span>
+<span class="token function">git</span> remote set-url origin https://mirrors.aliyun.com/homebrew/brew.git
+<span class="token comment"># 替换homebrew-core.git:</span>
+<span class="token builtin class-name">cd</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span>brew --repo<span class="token variable">)</span></span>/Library/Taps/homebrew/homebrew-core"</span>
+<span class="token function">git</span> remote set-url origin https://mirrors.aliyun.com/homebrew/homebrew-core.git
+<span class="token comment"># 应用生效</span>
+brew update
+<span class="token comment"># 替换homebrew-bottles:</span>
+<span class="token builtin class-name">echo</span> <span class="token string">'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles'</span> <span class="token operator">>></span> ~/.zshrc
+<span class="token builtin class-name">source</span> ~/.zshrc<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>恢复默认配置</p>
+</li>
+</ol>
+<ul>
+<li>首先执行下述命令:<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 重置brew.git:</span>
+<span class="token builtin class-name">cd</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span>brew --repo<span class="token variable">)</span></span>"</span>
+<span class="token function">git</span> remote set-url origin https://github.com/Homebrew/brew.git
+<span class="token comment"># 重置homebrew-core.git:</span>
+<span class="token builtin class-name">cd</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span>brew --repo<span class="token variable">)</span></span>/Library/Taps/homebrew/homebrew-core"</span>
+<span class="token function">git</span> remote set-url origin https://github.com/Homebrew/homebrew-core.git
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>然后删掉 HOMEBREW_BOTTLE_DOMAIN 环境变量,将你终端文件<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">~/.bash_profile<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+或者<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">~/.zshrc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+中<pre class="line-numbers language-none"><code class="language-none">HOMEBREW_BOTTLE_DOMAIN<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+行删掉, 并执行<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">source</span> ~/.bash_profile<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+或者<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">source</span> ~/.zshrc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+</li>
+</ul>
+<h2 id="终端走代理"><a href="#终端走代理" class="headerlink" title="终端走代理"></a>终端走代理</h2><ul>
+<li>临时的方式，影响最小<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">export</span> <span class="token assign-left variable">http_proxy</span><span class="token operator">=</span>http://proxyAddress:port<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+e.g.<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">export</span> <span class="token assign-left variable">http_proxy</span><span class="token operator">=</span><span class="token string">"http://127.0.0.1:1087"</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">https_proxy</span><span class="token operator">=</span><span class="token string">"http://127.0.0.1:1087"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+</ul>
+]]></content>
+      <categories>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>mac</tag>
+      </tags>
   </entry>
   <entry>
     <title>写出优雅的JS代码</title>
