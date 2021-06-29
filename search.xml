@@ -1428,7 +1428,8 @@ yum <span class="token function">install</span> -y cronolog<span aria-hidden="tr
 	whitelist<span class="token punctuation">.</span><span class="token function">addTags</span><span class="token punctuation">(</span><span class="token string">"p"</span><span class="token punctuation">,</span><span class="token string">"h1"</span><span class="token punctuation">,</span><span class="token string">"div"</span><span class="token punctuation">,</span><span class="token string">"span"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 	<span class="token class-name">String</span> result <span class="token operator">=</span> <span class="token class-name">Jsoup</span><span class="token punctuation">.</span><span class="token function">clean</span><span class="token punctuation">(</span>content<span class="token punctuation">,</span> whitelist<span class="token punctuation">)</span><span class="token punctuation">;</span>
 	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//&lt;h1>&lt;span style="background-color: rgb(194, 79, 74); font-style: italic; color: rgb(139, 170, 74);">测试XSS&lt;/span>&lt;/h1></span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+]]></content>
       <categories>
         <category>后台</category>
       </categories>
@@ -1437,125 +1438,9 @@ yum <span class="token function">install</span> -y cronolog<span aria-hidden="tr
       </tags>
   </entry>
   <entry>
-    <title>关于我</title>
+    <title>关于</title>
     <url>//about.html</url>
-    <content><![CDATA[<p>写着玩玩</p>
-<a id="more"></a>
-
-<h1 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h1><ul>
-<li>Email：<a href="mailto:&#106;&#117;&#110;&#98;&#x6f;&#x2e;&#97;&#x74;&#111;&#x6d;&#x40;&#103;&#109;&#x61;&#x69;&#108;&#46;&#99;&#111;&#109;">&#106;&#117;&#110;&#98;&#x6f;&#x2e;&#97;&#x74;&#111;&#x6d;&#x40;&#103;&#109;&#x61;&#x69;&#108;&#46;&#99;&#111;&#109;</a> </li>
-<li>手机号：</li>
-<li>微信号：</li>
-</ul>
-<hr>
-<h1 id="个人信息"><a href="#个人信息" class="headerlink" title="个人信息"></a>个人信息</h1><ul>
-<li><p>Atom/男/1994</p>
-</li>
-<li><p>本科/安徽农业大学经济技术学院</p>
-</li>
-<li><p>工作年限：3年</p>
-</li>
-<li><p>技术博客：<a href="https://fyee.github.io/">https://fyee.github.io</a></p>
-</li>
-<li><p>Github：<a href="https://github.com/fyee">https://github.com/fyee</a></p>
-</li>
-<li><p>期望职位：Java高级程序员</p>
-</li>
-<li><p>期望薪资：</p>
-</li>
-<li><p>期望城市：合肥</p>
-</li>
-</ul>
-<hr>
-<h1 id="工作经历"><a href="#工作经历" class="headerlink" title="工作经历"></a>工作经历</h1><h2 id="移远通信-（-2020年6月-至今-）"><a href="#移远通信-（-2020年6月-至今-）" class="headerlink" title="移远通信 （ 2020年6月 ~ 至今 ）"></a>移远通信 （ 2020年6月 ~ 至今 ）</h2><ul>
-<li>移远的福利待遇在合肥还是不错的，欢迎来移远工作</li>
-</ul>
-<h2 id="合肥爱尚网络科技有限公司-（-2019年5月-2020年06月-）"><a href="#合肥爱尚网络科技有限公司-（-2019年5月-2020年06月-）" class="headerlink" title="合肥爱尚网络科技有限公司 （ 2019年5月 ~ 2020年06月 ）"></a>合肥爱尚网络科技有限公司 （ 2019年5月 ~ 2020年06月 ）</h2><h3 id="QM社交商城"><a href="#QM社交商城" class="headerlink" title="QM社交商城"></a>QM社交商城</h3><ul>
-<li>技术架构：spring cloud alibaba/nacos/mysql/redis/elasticsearch/rocketMQ </li>
-<li>项目职责：担任开发组⻓，负责整个项目的架构设计，负责餐饮，酒店，聊天版 块业务开发，原型设计，处理并解决组内成员开发遇到的各种问题。按时交付任务。</li>
-<li>项目介绍：QM项目后台采用Spring Cloud微服务架构，注册中心使用阿里巴巴 Nacos,使用Nginx+Keepalived保障注册中心高可用，网关使用Spring Cloud Gateway,配合阿里云SLB实现网关层对外的负载均衡。餐饮模块提供了⻔店供用户消费，用户可以在app上选择对应的⻔店进行消费。酒店模块主要功能是提供给用户预定酒店，酒店信息检索使用elasticsearch实现，使用RocketMQ延时消息，实现延时的业务逻辑，如订单超时，数据失效等。使用redis分布式锁防止表单重复提交。聊天版块功能类似微信，通讯录好友通过elasticsearch存储用户通 讯录数据，通过与mysql数据对比，匹配出符合条件的用户信息。附近好友及摇一摇也通过es的方式实现。</li>
-</ul>
-<h2 id="安徽肯曼科技有限公司-（-2018年1月-2019年5月-）"><a href="#安徽肯曼科技有限公司-（-2018年1月-2019年5月-）" class="headerlink" title="安徽肯曼科技有限公司 （ 2018年1月 ~ 2019年5月 ）"></a>安徽肯曼科技有限公司 （ 2018年1月 ~ 2019年5月 ）</h2><h3 id="城市智慧消防大数据平台"><a href="#城市智慧消防大数据平台" class="headerlink" title="城市智慧消防大数据平台"></a>城市智慧消防大数据平台</h3><ul>
-<li>技术架构：spring cloud alibaba/nacos/mysql/redis/cassandra/kafka </li>
-<li>项目职责：java后端开发，管理端界面开发（Vue）,负责硬件设备与平台的对接，协议解析，消息发送，数据统计等。</li>
-<li>项目介绍：《城市智慧消防大数据平台》为安徽肯曼科技为重点单位、小微场所开发的基于智慧物联的智慧消防管理平台，可对重点单位及小微场所等人流量密集区域进行烟雾、可燃气体、安全用电、消防栓水压等进行全方位数据采集、预警和应急指挥。平台配套有专用app，随时随地都可满足管理人员对各个业务的监管控制。使用Spring Cloud微服务开发可满足高并发、高可用性，并具备故障恢复能力。</li>
-</ul>
-<h3 id="洽洽PMS"><a href="#洽洽PMS" class="headerlink" title="洽洽PMS"></a>洽洽PMS</h3><ul>
-<li>技术架构：spring boot/mybatisplus/Vuejs/Layui</li>
-<li>项目职责：担任java后端开发，与洽洽SAP系统进行数据对接，与PMS人员进行 需求沟通，原型设计，对接微信公众号平台，百度地图等。 </li>
-<li>项目简介：洽洽PMS系统主要提供洽洽公司管理促销员，促销品;包含促销员注册，审核，上班打卡，日报提交;促销品领取，发放;促销品库存出入;促销员 工资结算;督导巡店，审核日报等。</li>
-</ul>
-<h3 id="其他项目"><a href="#其他项目" class="headerlink" title="其他项目"></a>其他项目</h3><ul>
-<li>黑烟车监测平台</li>
-<li>红云智慧消防</li>
-<li>MOKA可视化平台</li>
-</ul>
-<hr>
-<h1 id="开源项目和作品"><a href="#开源项目和作品" class="headerlink" title="开源项目和作品"></a>开源项目和作品</h1><h2 id="开源项目"><a href="#开源项目" class="headerlink" title="开源项目"></a>开源项目</h2><ul>
-<li><a href="https://github.com/Fyee/Ihome-react-native">智能家居APP</a>：使用React Native开发的智能家居App</li>
-<li><a href="https://github.com/Fyee/react-native-wechatui">仿微信UI</a>：使用React Native开发的仿微信UI界面的App</li>
-</ul>
-<h2 id="技术文章"><a href="#技术文章" class="headerlink" title="技术文章"></a>技术文章</h2><ul>
-<li><a href="https://fyee.github.io/2020/12/23/FrontPublish/#more">非覆盖式发布实践</a></li>
-<li><a href="https://fyee.github.io/2020/12/25/Jmeter/#more">Jmeter性能测试(翻译youtube Jmeter教程)</a></li>
-</ul>
-<h2 id="演讲和讲义"><a href="#演讲和讲义" class="headerlink" title="演讲和讲义"></a>演讲和讲义</h2><ul>
-<li>公司内部分享：<a href="https://fyee.github.io/2020/12/04/Test/">神一样的自动化测试工具分享</a></li>
-</ul>
-<h1 id="技能清单"><a href="#技能清单" class="headerlink" title="技能清单"></a>技能清单</h1><p>以下均为我熟练使用的技能</p>
-<ul>
-<li>后端技能：Spring/Spring Boot/Mybatis</li>
-<li>微服务：Spring Cloud/Spring Cloud Alibaba/Nacos/Seata</li>
-<li>运维：Linux/Shell脚本/Jenkins自动化部署/Docker/Nginx/Keepalived/Grafana/Prometheus</li>
-<li>前端框架：Ant design/ElementUI/React/Vue</li>
-<li>测试工具：TestProject/Pytest/Jmeter</li>
-<li>原型&amp;设计：Axure/Sketch/墨刀/xiaopiu</li>
-<li>数据库相关：MySQL/Redis/Elasticsearch/Cassandra</li>
-<li>版本管理、文档工具：Git/Confluence/Gitbook/Jira</li>
-<li>单元测试：Junit</li>
-<li>云和开放平台：阿里云/腾讯云/百度云/微信开发平台/融云/萤石云</li>
-</ul>
-<h1 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h1><p>感谢您花时间阅读我的简历，期待能有机会和您共事。</p>
-<h1 id="Contact-Details"><a href="#Contact-Details" class="headerlink" title="Contact Details"></a>Contact Details</h1><ul>
-<li>Email: <a href="mailto:&#106;&#x75;&#110;&#x62;&#x6f;&#x2e;&#97;&#x74;&#111;&#x6d;&#64;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#46;&#x63;&#x6f;&#x6d;">&#106;&#x75;&#110;&#x62;&#x6f;&#x2e;&#97;&#x74;&#111;&#x6d;&#64;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#46;&#x63;&#x6f;&#x6d;</a> </li>
-<li>Phone:</li>
-<li>Wechat:</li>
-</ul>
-<hr>
-<h1 id="Personal-Infomation"><a href="#Personal-Infomation" class="headerlink" title="Personal Infomation"></a>Personal Infomation</h1><ul>
-<li><p>Atom/Male/1994</p>
-</li>
-<li><p>Undergraduate/College Of Economy and Technology Of Anhui Agricultural University</p>
-</li>
-<li><p>Working years: 3 years</p>
-</li>
-<li><p>Blog: <a href="https://fyee.github.io/">https://fyee.github.io</a></p>
-</li>
-<li><p>Github：<a href="https://github.com/fyee">https://github.com/fyee</a></p>
-</li>
-<li><p>Expected Position: Java programmer</p>
-</li>
-<li><p>Expected Salary:</p>
-</li>
-<li><p>Expected City: HeFei</p>
-</li>
-</ul>
-<hr>
-<h1 id="Work-Experience"><a href="#Work-Experience" class="headerlink" title="Work Experience"></a>Work Experience</h1><h2 id="Quectel-（-2020-6-Today-）"><a href="#Quectel-（-2020-6-Today-）" class="headerlink" title="Quectel （ 2020.6 ~ Today ）"></a>Quectel （ 2020.6 ~ Today ）</h2><h3 id="KPI-System"><a href="#KPI-System" class="headerlink" title="KPI System"></a>KPI System</h3><h3 id="HR-System"><a href="#HR-System" class="headerlink" title="HR System"></a>HR System</h3><h1 id="Skills"><a href="#Skills" class="headerlink" title="Skills"></a>Skills</h1><p>Here are my skills</p>
-<ul>
-<li>Backend: Spring/Spring Boot/Mybatis</li>
-<li>Micro Service: Spring Cloud/Spring Cloud Alibaba/Nacos/Seata</li>
-<li>Operations: Linux/Shell/Jenkins/Docker/Nginx/Keepalived/Grafana/Prometheus</li>
-<li>Frontend: Ant design/ElementUI/React/Vue</li>
-<li>Test: TestProject/Pytest/Jmeter</li>
-<li>Prototype &amp; UI: Axure/Sketch/MockingBot/xiaopiu</li>
-<li>DataBase: MySQL/Redis/Elasticsearch/Cassandra</li>
-<li>VersionControl &amp; Agile Software:Git/Confluence/Gitbook/Jira</li>
-<li>UnitTest: Junit</li>
-<li>CloudPlatform: Aliyun/Tencent Cloud/Baidu/Open Wechat</li>
-</ul>
-<h1 id="Thanks"><a href="#Thanks" class="headerlink" title="Thanks"></a>Thanks</h1><p>Thank you for your time on my resume,I am looking forward to working with you.</p>
-]]></content>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>Mac配置</title>
@@ -1621,6 +1506,630 @@ e.g.<pre class="line-numbers language-bash" data-language="bash"><code class="la
       <tags>
         <tag>mac</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>RSA加密解密</title>
+    <url>/2021/06/29/rsa/</url>
+    <content><![CDATA[<p>Java、JS、C++ RAS加密解密代码实现。</p>
+<a id="more"></a>
+
+<h2 id="JavaScript-RSA加解密"><a href="#JavaScript-RSA加解密" class="headerlink" title="JavaScript RSA加解密"></a>JavaScript RSA加解密</h2><h3 id="第三方相关组件"><a href="#第三方相关组件" class="headerlink" title="第三方相关组件"></a>第三方相关组件</h3><ul>
+<li><a href="https://github.com/rzcoder/node-rsa">node-rsa</a></li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> node-rsa<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="代码实现-Java-Script"><a href="#代码实现-Java-Script" class="headerlink" title="代码实现-Java Script"></a>代码实现-Java Script</h3><ul>
+<li>定义方法</li>
+</ul>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> NodeRSA <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"node-rsa"</span><span class="token punctuation">)</span>
+
+<span class="token keyword">function</span> <span class="token function">getRSAKeyPair</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token comment">// 生成空对象</span>
+    <span class="token keyword">let</span> keyPair <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">NodeRSA</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    keyPair<span class="token punctuation">.</span><span class="token function">setOptions</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+        encryptionScheme<span class="token operator">:</span><span class="token string">"pkcs1"</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    <span class="token comment">// keyPairObj, 保存经 BASE64 编码处理之后 PEM 格式的 RSA 密钥对</span>
+    <span class="token keyword">let</span> keyPairObj <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+        publicKey<span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+        privateKey<span class="token operator">:</span> <span class="token string">''</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token comment">// keySize: 2048 公指数为：65537</span>
+    keyPair<span class="token punctuation">.</span><span class="token function">generateKeyPair</span><span class="token punctuation">(</span><span class="token number">2048</span><span class="token punctuation">,</span> <span class="token number">65537</span><span class="token punctuation">)</span>
+    <span class="token comment">/**
+     * 导出密钥，对输出的密钥做一些格式化处理，以便 Java 端能直接使用，算然经过处理但是并不影响 JS 端的密钥导入，及正确性。
+     * 1. 公钥
+     * 2. 私钥
+     */</span>
+    keyPairObj<span class="token punctuation">.</span>publicKey <span class="token operator">=</span> keyPair<span class="token punctuation">.</span><span class="token function">exportKey</span><span class="token punctuation">(</span><span class="token string">"pkcs8-public-pem"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">-----BEGIN PUBLIC KEY-----</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">-----END PUBLIC KEY-----</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\n</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span>
+    keyPairObj<span class="token punctuation">.</span>privateKey <span class="token operator">=</span> keyPair<span class="token punctuation">.</span><span class="token function">exportKey</span><span class="token punctuation">(</span><span class="token string">"pkcs8-private-pem"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">-----BEGIN PRIVATE KEY-----</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">-----END PRIVATE KEY-----</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\n</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> keyPairObj
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">/**
+ * 公钥加密
+ * @param content 要加密的内容
+ * @param publicKey 加密用的公钥
+ * @param encoding
+ * @param source_encoding
+ * @returns &#123;string|Buffer&#125;
+ */</span>
+<span class="token keyword">function</span> <span class="token function">publicKeyEncrypt</span><span class="token punctuation">(</span>content<span class="token punctuation">,</span> publicKey<span class="token punctuation">,</span> encoding <span class="token operator">=</span> <span class="token string">"base64"</span><span class="token punctuation">,</span> source_encoding <span class="token operator">=</span> <span class="token string">"utf8"</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token comment">// 导入 publicKey</span>
+    <span class="token keyword">let</span> key <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">NodeRSA</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    key<span class="token punctuation">.</span><span class="token function">setOptions</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+        encryptionScheme<span class="token operator">:</span><span class="token string">"pkcs1"</span><span class="token punctuation">,</span> <span class="token comment">// 默认是：pkcs1_oaep，Java 端默认是 pkcs1, 这里做个修改</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    key<span class="token punctuation">.</span><span class="token function">importKey</span><span class="token punctuation">(</span>publicKey<span class="token punctuation">,</span> <span class="token string">"pkcs8-public-pem"</span><span class="token punctuation">)</span>
+    <span class="token comment">// 加密并返回加密结果</span>
+    <span class="token keyword">return</span> key<span class="token punctuation">.</span><span class="token function">encrypt</span><span class="token punctuation">(</span>content<span class="token punctuation">,</span> encoding<span class="token punctuation">,</span> source_encoding<span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">/**
+ * 私钥解密，解密之后 返回 utf8编码的字符串
+ * @param content: 公钥加密后的base64内容
+ * @param privateKey: 解密用的私钥，格式是：pkcs8 pem
+ * @param encoding: 加密之后的类型 buffer OR json, 默认是 buffer
+ * @returns：默认返回值类型就是 encoding 的默认值，即 buffer
+ */</span>
+<span class="token keyword">function</span> <span class="token function">privateKeyDecrypt</span><span class="token punctuation">(</span>content<span class="token punctuation">,</span> privateKey<span class="token punctuation">,</span> encoding <span class="token operator">=</span> <span class="token string">"buffer"</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// 导入 privateKey</span>
+    <span class="token keyword">let</span> key <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">NodeRSA</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    key<span class="token punctuation">.</span><span class="token function">setOptions</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+        encryptionScheme<span class="token operator">:</span> <span class="token string">"pkcs1"</span><span class="token punctuation">,</span> <span class="token comment">// 默认是：pkcs1_oaep，Java 端默认是 pkcs1, 这里做个修改</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    key<span class="token punctuation">.</span><span class="token function">importKey</span><span class="token punctuation">(</span>privateKey<span class="token punctuation">,</span> <span class="token string">"pkcs8-private-pem"</span><span class="token punctuation">)</span>
+    <span class="token comment">// 解密</span>
+    <span class="token keyword">return</span> key<span class="token punctuation">.</span><span class="token function">decrypt</span><span class="token punctuation">(</span>content<span class="token punctuation">,</span> encoding<span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>测试代码</li>
+</ul>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// RSA 测试</span>
+<span class="token keyword">let</span> content <span class="token operator">=</span> <span class="token string">"kldfajdjfjsdf+-**?/calk@1239"</span>
+<span class="token comment">// 生成密钥对</span>
+<span class="token keyword">let</span> keyPair <span class="token operator">=</span> <span class="token function">getRSAKeyPair</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> encrypted <span class="token operator">=</span> <span class="token function">publicKeyEncrypt</span><span class="token punctuation">(</span>content<span class="token punctuation">,</span> keyPair<span class="token punctuation">.</span>publicKey<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> decrypted <span class="token operator">=</span> <span class="token function">privateKeyDecrypt</span><span class="token punctuation">(</span>encrypted<span class="token punctuation">,</span> keyPair<span class="token punctuation">.</span>privateKey<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"公钥："</span><span class="token punctuation">,</span> keyPair<span class="token punctuation">.</span>publicKey<span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"私钥："</span><span class="token punctuation">,</span> keyPair<span class="token punctuation">.</span>privateKey<span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"公钥加密密文(经 BASE64 处理)："</span> <span class="token operator">+</span> encrypted<span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"私钥解密之后的明文："</span> <span class="token operator">+</span> decrypted<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token string">'utf8'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>运行测试代码</li>
+</ul>
+<blockquote>
+<p><code>node 你的js文件名.js</code></p>
+</blockquote>
+<pre class="line-numbers language-log" data-language="log"><code class="language-log">公钥： MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtnAl229x43yLJVn26PifLbpflYkwOuYzaOS+ij5hmgjmsjwKsQTvB60WA9ET9qgP1Y4EX1LJoAUfGOg5c4fgDloUz5bq6rRI7+GVfXatOIMfaTdWYxCW&#x2F;EGUE3IBci8dq14sY3neXALzhwKQLsirt76MAGojDQ3VoL5wEp&#x2F;ZbE9QxUo4Fj9rLIfjEy+&#x2F;MWXzUzedh1hqAJdtIydLUdXd4oVordK1UKXAc3g9K3rk3ZbE8wTe7tz5dh0XQr9lbo8+eR4X8b6cJT&#x2F;bzhZsffZs55ZjvdNIcMdaT1IxycypmmUZCNAVl+KGQ0hiAA1CG&#x2F;Qk6R0ep1fPwfEk0xgrkdwIDAQAB
+私钥： MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC2cCXbb3HjfIslWfbo+J8tul+ViTA65jNo5L6KPmGaCOayPAqxBO8HrRYD0RP2qA&#x2F;VjgRfUsmgBR8Y6Dlzh+AOWhTPlurqtEjv4ZV9dq04gx9pN1ZjEJb8QZQTcgFyLx2rXixjed5cAvOHApAuyKu3vowAaiMNDdWgvnASn9lsT1DFSjgWsh+P+IETL78xZfNTN52HWGoAl20jJ0tR1d3ihWit0rVQpcBzeD0reuTdlsTzBN7u3Pl2HRdCv2Vujz55HhfxvpwlP9vOFmx99mznlmO900hwx1pPUjHJzKmaZRkI0BWX4oZDSGIADUIb9CTpHR6nV8&#x2F;B8STTGCuR3AgMBAAECggEAbHw11s3ngGnf6F8d9x1Ysn2AN1Cz8GJRMc&#x2F;MCjLcIRen71bK2MbhSMRBMhXS9Dqt58SijviQ0uoYutvkxfGHZ6FjfKn2mYiJUrPnDAtVKCS4uf1hDlmgHvL0FbgWagrgbrX6WVDvy&#x2F;EpVSBOErPbgND7OYfjvfB7FzIHPNv3E3L2W2ZMuUaQC+MW8Ui+m7S0hgaCb4TRTEAfaHhYkIIMmy4YMMEweSFwTulZ99dUzDI4U+3MT9W+eMaq&#x2F;kPk9nLdZJB4I+Q7KHDP6OiUbrU4qQEkGeISkeFO46NP0wgxYHB+jHiXo9Dbr2mnernDAIBltkXSZ4dm5&#x2F;6Ig2UDzHw6qQKBgQD+TCQ63AOZ4sP4Z171iLFw9zBiH+lvuEqfyTMPP0VKM98pmGSs6m&#x2F;Co1GSRrzhXNu4g8B+mH4XvxJJoDDoe&#x2F;4mAUCLomPTOaOMOAzON8HddGhTCu5uKKjsFIYsP7fgL9wleiU8RQpA&#x2F;HnOIbkR4DgkbHxG8cEyVXSN&#x2F;lA&#x2F;p0eSwwKBgQC3qNdsW5osHwNxiN7OGaxH6KCsKHnEDDYACKDVnWAlyePopSq&#x2F;YWAa9Txnn4SfDDHgnXAsSmJgRciqCYzFFR8CUmKitQcn0g21KwpRgUKEWS8jFcXL1gtzn9T7wyedIWQOks7UztXw5c&#x2F;ckXosotA+NR0EYNhLN8Gd0tp9QKikPQKBgGVL+1qe7ahNFndK5h60lspDDTjpMVnZdZB02ywFrhpC03CETgY7VM2ZtRKpru+ux6+WfAVxxTi8WhKOBy10xuZotUdqJo2rdiSS5zb2KvmGN1BtGFE1TSTNgCz8LMjXB8C+CTsa3VzJtdOQx2IBiRupQ1AXWTgtpkIxvdG9Vtt1AoGACXGrMi07rk0h9jKdkmeLjl8N9AxYxpYCKNpIuvNOwGKzT4E+w3yUXo6BvqpbPXp5Dh3KaNyiVmUAPo4jKPc&#x2F;EvV9kPRSG+AXSFugOjS1YOzdGabC9wpYqGdtokyUuuW+qWkvLY49PhfzKlpot+bfYnOEvHbmaGfDkwQGrC4o&#x2F;dkCgYAJe6Bn4pvnLWXYHaDmARjP&#x2F;VEGq1i+8OgiJcVi+eNorkDoQjcGjo2ETCr3F3Z28QFEG14C9kdHQXKQNPKawzbzoMG40TqXmS9aw4rkIFX&#x2F;6MtUugUyjmbYBmsHyuVE5AYfYsYY6AqPArCf2x7rFPKhdHZVHcJ1GZgMl0P1Tydg3A&#x3D;&#x3D;
+公钥加密密文(经 BASE64 处理)：FBlv0Zzi1LFn5AWRC3yxnfX74&#x2F;aHhU8EB0viBJJiDbXfGCecahOXh0T48XzX1mbaIWf&#x2F;MtgJJek2&#x2F;oUN&#x2F;+XCZ6CYFkYwcVLZ+H7QSDSARCcjrLyYQtZhhBDkXkrwfqO2VlD5JM+cMOTGiVZWFxTH884ztLzAMWmagNJ7Rg4Ej1F+BFFehGdMK24FZ5qP2s3V3aLppJCI0ssXx0aTRGwyjswEwr2utslcEMlLjp&#x2F;NBJti9R3o4FoXmz0sR00l64kTRQoB8HCV1d2Su2oDs78SYJ+wOs5t4katFuUDc1XGB&#x2F;xs+N9sqz3rI8yLfpHqS7pEs33CmBhR6BNg&#x3D;&#x3D;
+私钥解密之后的明文：kldfajdjfjsdf+-**?&#x2F;calk@1239
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="Java-RSA加解密"><a href="#Java-RSA加解密" class="headerlink" title="Java RSA加解密"></a>Java RSA加解密</h2><h3 id="代码实现-Java"><a href="#代码实现-Java" class="headerlink" title="代码实现-Java"></a>代码实现-Java</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java">
+<span class="token keyword">import</span> <span class="token namespace">javax<span class="token punctuation">.</span>crypto<span class="token punctuation">.</span></span><span class="token class-name">Cipher</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>nio<span class="token punctuation">.</span>charset<span class="token punctuation">.</span></span><span class="token class-name">StandardCharsets</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>security<span class="token punctuation">.</span></span><span class="token operator">*</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>security<span class="token punctuation">.</span>spec<span class="token punctuation">.</span></span><span class="token class-name">PKCS8EncodedKeySpec</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>security<span class="token punctuation">.</span>spec<span class="token punctuation">.</span></span><span class="token class-name">X509EncodedKeySpec</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Base64</span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RsaUtil</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">String</span> RSA <span class="token operator">=</span> <span class="token string">"RSA"</span><span class="token punctuation">;</span>
+    <span class="token comment">/**
+     * 生成密钥对：密钥对中包含公钥和私钥
+     * @return 包含 RSA 公钥与私钥的 keyPair
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">KeyPair</span> <span class="token function">getKeyPair</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">// 获得RSA密钥对的生成器实例</span>
+        <span class="token class-name">KeyPairGenerator</span> keyPairGenerator <span class="token operator">=</span> <span class="token class-name">KeyPairGenerator</span><span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span>RSA<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 一个安全的随机数</span>
+        <span class="token class-name">SecureRandom</span> secureRandom <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SecureRandom</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">currentTimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token class-name">StandardCharsets</span><span class="token punctuation">.</span>UTF_8<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 这里可以是1024、2048 初始化一个密钥对</span>
+        keyPairGenerator<span class="token punctuation">.</span><span class="token function">initialize</span><span class="token punctuation">(</span><span class="token number">2048</span><span class="token punctuation">,</span> secureRandom<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 获得密钥对</span>
+        <span class="token keyword">return</span> keyPairGenerator<span class="token punctuation">.</span><span class="token function">generateKeyPair</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token comment">/**
+     * 获取公钥 (并进行 Base64 编码，返回一个 Base64 编码后的字符串)
+     * @param keyPair：RSA 密钥对
+     * @return 返回一个 Base64 编码后的公钥字符串
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">String</span> <span class="token function">getPublicKey</span><span class="token punctuation">(</span><span class="token class-name">KeyPair</span> keyPair<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token class-name">PublicKey</span> publicKey <span class="token operator">=</span> keyPair<span class="token punctuation">.</span><span class="token function">getPublic</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> bytes <span class="token operator">=</span> publicKey<span class="token punctuation">.</span><span class="token function">getEncoded</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token class-name">Base64</span><span class="token punctuation">.</span><span class="token function">getEncoder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">encodeToString</span><span class="token punctuation">(</span>bytes<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token comment">/**
+     * 获取私钥(并进行Base64编码，返回一个 Base64 编码后的字符串)
+     * @param keyPair：RSA 密钥对
+     * @return 返回一个 Base64 编码后的私钥字符串
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">String</span> <span class="token function">getPrivateKey</span><span class="token punctuation">(</span><span class="token class-name">KeyPair</span> keyPair<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token class-name">PrivateKey</span> privateKey <span class="token operator">=</span> keyPair<span class="token punctuation">.</span><span class="token function">getPrivate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> bytes <span class="token operator">=</span> privateKey<span class="token punctuation">.</span><span class="token function">getEncoded</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token class-name">Base64</span><span class="token punctuation">.</span><span class="token function">getEncoder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">encodeToString</span><span class="token punctuation">(</span>bytes<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token comment">/**
+     * 将 Base64 编码后的公钥转换成 PublicKey 对象
+     * @param pubStr：Base64 编码后的公钥字符串
+     * @return PublicKey
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">PublicKey</span> <span class="token function">string2PublicKey</span><span class="token punctuation">(</span><span class="token class-name">String</span> pubStr<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> bytes <span class="token operator">=</span> <span class="token class-name">Base64</span><span class="token punctuation">.</span><span class="token function">getDecoder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">decode</span><span class="token punctuation">(</span>pubStr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">X509EncodedKeySpec</span> keySpec <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">X509EncodedKeySpec</span><span class="token punctuation">(</span>bytes<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">KeyFactory</span> keyFactory <span class="token operator">=</span> <span class="token class-name">KeyFactory</span><span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span>RSA<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> keyFactory<span class="token punctuation">.</span><span class="token function">generatePublic</span><span class="token punctuation">(</span>keySpec<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token comment">/**
+     * 将 Base64 码后的私钥转换成 PrivateKey 对象
+     * @param priStr：Base64 编码后的私钥字符串
+     * @return PrivateKey
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">PrivateKey</span> <span class="token function">string2PrivateKey</span><span class="token punctuation">(</span><span class="token class-name">String</span> priStr<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> bytes <span class="token operator">=</span> <span class="token class-name">Base64</span><span class="token punctuation">.</span><span class="token function">getDecoder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">decode</span><span class="token punctuation">(</span>priStr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">PKCS8EncodedKeySpec</span> keySpec <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PKCS8EncodedKeySpec</span><span class="token punctuation">(</span>bytes<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">KeyFactory</span> keyFactory <span class="token operator">=</span> <span class="token class-name">KeyFactory</span><span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span>RSA<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> keyFactory<span class="token punctuation">.</span><span class="token function">generatePrivate</span><span class="token punctuation">(</span>keySpec<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token comment">/**
+     * 公钥加密
+     * @param content 待加密的内容 byte[]
+     * @param publicKey 加密所需的公钥对象 PublicKey
+     * @return 加密后的字节数组 byte[]
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">publicKeyEncrypt</span><span class="token punctuation">(</span><span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> content<span class="token punctuation">,</span> <span class="token class-name">PublicKey</span> publicKey<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token function">rsa</span><span class="token punctuation">(</span>publicKey<span class="token punctuation">,</span>content<span class="token punctuation">,</span><span class="token class-name">Cipher</span><span class="token punctuation">.</span>ENCRYPT_MODE<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token comment">/**
+     * 私钥解密
+     * @param content   待解密的内容 byte[]，这里要注意，由于我们中间过程用的都是 BASE64 ，所以在传入参数前应先进行 BASE64 解析
+     * @param privateKey    解密需要的私钥对象 PrivateKey
+     * @return 解密后的字节数组 byte[]，这里是元数据，需要根据情况自行转码
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">privateKeyDecrypt</span><span class="token punctuation">(</span><span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> content<span class="token punctuation">,</span> <span class="token class-name">PrivateKey</span> privateKey<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token function">rsa</span><span class="token punctuation">(</span>privateKey<span class="token punctuation">,</span>content<span class="token punctuation">,</span><span class="token class-name">Cipher</span><span class="token punctuation">.</span>DECRYPT_MODE<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token comment">/**
+     * rsa 加、解密
+     *
+     * @param key  key
+     * @param data 数据
+     * @param mode 模式
+     * @return 解密后的数据
+     */</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">rsa</span><span class="token punctuation">(</span><span class="token class-name">Key</span> key<span class="token punctuation">,</span> <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> data<span class="token punctuation">,</span> <span class="token keyword">int</span> mode<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
+            <span class="token class-name">Cipher</span> cipher <span class="token operator">=</span> <span class="token class-name">Cipher</span><span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token string">"RSA"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            cipher<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span>mode<span class="token punctuation">,</span> key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> cipher<span class="token punctuation">.</span><span class="token function">doFinal</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">RuntimeException</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span><span class="token punctuation">&#123;</span>
+        <span class="token comment">// 待加密内容</span>
+        <span class="token class-name">String</span> content <span class="token operator">=</span> <span class="token string">"ksjalfjksdjfsf+-**?/calk@1239"</span><span class="token punctuation">;</span>
+        <span class="token class-name">KeyPair</span> keyPair <span class="token operator">=</span> <span class="token function">getKeyPair</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">try</span><span class="token punctuation">&#123;</span>
+            <span class="token class-name">PrivateKey</span> privateKey <span class="token operator">=</span> keyPair<span class="token punctuation">.</span><span class="token function">getPrivate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">PublicKey</span> publicKey <span class="token operator">=</span> keyPair<span class="token punctuation">.</span><span class="token function">getPublic</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"公钥为（BASE64处理后）："</span><span class="token operator">+</span> <span class="token function">getPublicKey</span><span class="token punctuation">(</span>keyPair<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"私钥为（BASE64处理后）："</span><span class="token operator">+</span> <span class="token function">getPrivateKey</span><span class="token punctuation">(</span>keyPair<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment">// 加密</span>
+            <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> publicKeyEncrypt <span class="token operator">=</span> <span class="token function">publicKeyEncrypt</span><span class="token punctuation">(</span>content<span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> publicKey<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">String</span> base64PublicKeyEncrypt <span class="token operator">=</span> <span class="token class-name">Base64</span><span class="token punctuation">.</span><span class="token function">getEncoder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">encodeToString</span><span class="token punctuation">(</span>publicKeyEncrypt<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"公钥加密密文(BASE64 处理之后)："</span><span class="token operator">+</span>base64PublicKeyEncrypt<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment">// 解密</span>
+            <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> privateKeyDecrypt <span class="token operator">=</span> <span class="token function">privateKeyDecrypt</span><span class="token punctuation">(</span><span class="token class-name">Base64</span><span class="token punctuation">.</span><span class="token function">getDecoder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">decode</span><span class="token punctuation">(</span>base64PublicKeyEncrypt<span class="token punctuation">)</span><span class="token punctuation">,</span> privateKey<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">String</span> decrypted <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span>privateKeyDecrypt<span class="token punctuation">,</span> <span class="token class-name">StandardCharsets</span><span class="token punctuation">.</span>UTF_8<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"私钥解密之后((UTF-8 处理之后)："</span><span class="token operator">+</span> decrypted<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span><span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> e<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="测试结果"><a href="#测试结果" class="headerlink" title="测试结果"></a>测试结果</h3><pre class="line-numbers language-log" data-language="log"><code class="language-log">公钥： MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtnAl229x43yLJVn26PifLbpflYkwOuYzaOS+ij5hmgjmsjwKsQTvB60WA9ET9qgP1Y4EX1LJoAUfGOg5c4fgDloUz5bq6rRI7+GVfXatOIMfaTdWYxCW&#x2F;EGUE3IBci8dq14sY3neXALzhwKQLsirt76MAGojDQ3VoL5wEp&#x2F;ZbE9QxUo4Fj9rLIfjEy+&#x2F;MWXzUzedh1hqAJdtIydLUdXd4oVordK1UKXAc3g9K3rk3ZbE8wTe7tz5dh0XQr9lbo8+eR4X8b6cJT&#x2F;bzhZsffZs55ZjvdNIcMdaT1IxycypmmUZCNAVl+KGQ0hiAA1CG&#x2F;Qk6R0ep1fPwfEk0xgrkdwIDAQAB
+私钥： MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC2cCXbb3HjfIslWfbo+J8tul+ViTA65jNo5L6KPmGaCOayPAqxBO8HrRYD0RP2qA&#x2F;VjgRfUsmgBR8Y6Dlzh+AOWhTPlurqtEjv4ZV9dq04gx9pN1ZjEJb8QZQTcgFyLx2rXixjed5cAvOHApAuyKu3vowAaiMNDdWgvnASn9lsT1DFSjgWsh+P+IETL78xZfNTN52HWGoAl20jJ0tR1d3ihWit0rVQpcBzeD0reuTdlsTzBN7u3Pl2HRdCv2Vujz55HhfxvpwlP9vOFmx99mznlmO900hwx1pPUjHJzKmaZRkI0BWX4oZDSGIADUIb9CTpHR6nV8&#x2F;B8STTGCuR3AgMBAAECggEAbHw11s3ngGnf6F8d9x1Ysn2AN1Cz8GJRMc&#x2F;MCjLcIRen71bK2MbhSMRBMhXS9Dqt58SijviQ0uoYutvkxfGHZ6FjfKn2mYiJUrPnDAtVKCS4uf1hDlmgHvL0FbgWagrgbrX6WVDvy&#x2F;EpVSBOErPbgND7OYfjvfB7FzIHPNv3E3L2W2ZMuUaQC+MW8Ui+m7S0hgaCb4TRTEAfaHhYkIIMmy4YMMEweSFwTulZ99dUzDI4U+3MT9W+eMaq&#x2F;kPk9nLdZJB4I+Q7KHDP6OiUbrU4qQEkGeISkeFO46NP0wgxYHB+jHiXo9Dbr2mnernDAIBltkXSZ4dm5&#x2F;6Ig2UDzHw6qQKBgQD+TCQ63AOZ4sP4Z171iLFw9zBiH+lvuEqfyTMPP0VKM98pmGSs6m&#x2F;Co1GSRrzhXNu4g8B+mH4XvxJJoDDoe&#x2F;4mAUCLomPTOaOMOAzON8HddGhTCu5uKKjsFIYsP7fgL9wleiU8RQpA&#x2F;HnOIbkR4DgkbHxG8cEyVXSN&#x2F;lA&#x2F;p0eSwwKBgQC3qNdsW5osHwNxiN7OGaxH6KCsKHnEDDYACKDVnWAlyePopSq&#x2F;YWAa9Txnn4SfDDHgnXAsSmJgRciqCYzFFR8CUmKitQcn0g21KwpRgUKEWS8jFcXL1gtzn9T7wyedIWQOks7UztXw5c&#x2F;ckXosotA+NR0EYNhLN8Gd0tp9QKikPQKBgGVL+1qe7ahNFndK5h60lspDDTjpMVnZdZB02ywFrhpC03CETgY7VM2ZtRKpru+ux6+WfAVxxTi8WhKOBy10xuZotUdqJo2rdiSS5zb2KvmGN1BtGFE1TSTNgCz8LMjXB8C+CTsa3VzJtdOQx2IBiRupQ1AXWTgtpkIxvdG9Vtt1AoGACXGrMi07rk0h9jKdkmeLjl8N9AxYxpYCKNpIuvNOwGKzT4E+w3yUXo6BvqpbPXp5Dh3KaNyiVmUAPo4jKPc&#x2F;EvV9kPRSG+AXSFugOjS1YOzdGabC9wpYqGdtokyUuuW+qWkvLY49PhfzKlpot+bfYnOEvHbmaGfDkwQGrC4o&#x2F;dkCgYAJe6Bn4pvnLWXYHaDmARjP&#x2F;VEGq1i+8OgiJcVi+eNorkDoQjcGjo2ETCr3F3Z28QFEG14C9kdHQXKQNPKawzbzoMG40TqXmS9aw4rkIFX&#x2F;6MtUugUyjmbYBmsHyuVE5AYfYsYY6AqPArCf2x7rFPKhdHZVHcJ1GZgMl0P1Tydg3A&#x3D;&#x3D;
+公钥加密密文(经 BASE64 处理)：FBlv0Zzi1LFn5AWRC3yxnfX74&#x2F;aHhU8EB0viBJJiDbXfGCecahOXh0T48XzX1mbaIWf&#x2F;MtgJJek2&#x2F;oUN&#x2F;+XCZ6CYFkYwcVLZ+H7QSDSARCcjrLyYQtZhhBDkXkrwfqO2VlD5JM+cMOTGiVZWFxTH884ztLzAMWmagNJ7Rg4Ej1F+BFFehGdMK24FZ5qP2s3V3aLppJCI0ssXx0aTRGwyjswEwr2utslcEMlLjp&#x2F;NBJti9R3o4FoXmz0sR00l64kTRQoB8HCV1d2Su2oDs78SYJ+wOs5t4katFuUDc1XGB&#x2F;xs+N9sqz3rI8yLfpHqS7pEs33CmBhR6BNg&#x3D;&#x3D;
+私钥解密之后的明文：kldfajdjfjsdf+-**?&#x2F;calk@1239
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="C-RSA加解密"><a href="#C-RSA加解密" class="headerlink" title="C++ RSA加解密"></a>C++ RSA加解密</h2><h3 id="第三方库"><a href="#第三方库" class="headerlink" title="第三方库"></a>第三方库</h3><ul>
+<li><a href="https://www.openssl.org/">openssl</a></li>
+<li>下载<a href="https://www.openssl.org/source/openssl-1.1.1k.tar.gz">openssl-1.1.1k.tar.gz</a></li>
+<li>安装：<ol>
+<li>解压文件至任意目录：如 /home/openssl-1.1.1k</li>
+<li><code>cd /home/openssl-1.1.1k</code></li>
+<li><code>./config</code></li>
+<li><code>sudo make install</code></li>
+<li><code>g++ *.cpp -L /home/openssl-1.1.1k -l ssl -l crypto</code></li>
+</ol>
+</li>
+</ul>
+<h3 id="代码实现-C"><a href="#代码实现-C" class="headerlink" title="代码实现-C++"></a>代码实现-C++</h3><h4 id="源代码地址-https-gist-github-com-superwills-5415344"><a href="#源代码地址-https-gist-github-com-superwills-5415344" class="headerlink" title="源代码地址(https://gist.github.com/superwills/5415344)"></a>源代码地址(<a href="https://gist.github.com/superwills/5415344">https://gist.github.com/superwills/5415344</a>)</h4><h4 id="CMakeLists-txt内容"><a href="#CMakeLists-txt内容" class="headerlink" title="CMakeLists.txt内容"></a>CMakeLists.txt内容</h4><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token function">cmake_minimum_required</span><span class="token punctuation">(</span>VERSION <span class="token number">3.19</span><span class="token punctuation">)</span>
+<span class="token function">project</span><span class="token punctuation">(</span>c_test<span class="token punctuation">)</span>
+<span class="token function">set</span><span class="token punctuation">(</span>CMAKE_CXX_STANDARD <span class="token number">14</span><span class="token punctuation">)</span>
+<span class="token function">set</span><span class="token punctuation">(</span>INC_DIR <span class="token operator">/</span>usr<span class="token operator">/</span>local<span class="token operator">/</span>opt<span class="token operator">/</span>openssl<span class="token operator">/</span>include<span class="token punctuation">)</span>
+<span class="token function">set</span><span class="token punctuation">(</span>LINK_DIR <span class="token operator">/</span>usr<span class="token operator">/</span>local<span class="token operator">/</span>opt<span class="token operator">/</span>openssl<span class="token operator">/</span>lib<span class="token punctuation">)</span>
+<span class="token function">include_directories</span><span class="token punctuation">(</span>$<span class="token punctuation">&#123;</span>INC_DIR<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+<span class="token function">link_directories</span><span class="token punctuation">(</span>$<span class="token punctuation">&#123;</span>LINK_DIR<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+<span class="token function">link_libraries</span><span class="token punctuation">(</span>ssl crypto<span class="token punctuation">)</span>
+<span class="token function">add_executable</span><span class="token punctuation">(</span>c_test main<span class="token punctuation">.</span>cpp base_64<span class="token punctuation">.</span>h base_64<span class="token punctuation">.</span>cpp base64<span class="token punctuation">.</span>h<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="base64-h"><a href="#base64-h" class="headerlink" title="base64.h"></a><a href="https://github.com/superwills/NibbleAndAHalf/blob/master/NibbleAndAHalf/base64.h">base64.h</a></h4><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">/*
+  https://github.com/superwills/NibbleAndAHalf
+  base64.h -- Fast base64 encoding and decoding.
+  version 1.0.0, April 17, 2013 143a
+  Copyright (C) 2013 William Sherif
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+  William Sherif
+  will.sherif@gmail.com
+  YWxsIHlvdXIgYmFzZSBhcmUgYmVsb25nIHRvIHVz
+*/</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">ifndef</span> <span class="token expression">BASE64_H</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token expression">BASE64_H</span></span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
+
+<span class="token keyword">const</span> <span class="token keyword">static</span> <span class="token keyword">char</span> <span class="token operator">*</span>b64 <span class="token operator">=</span> <span class="token string">"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"</span><span class="token punctuation">;</span>
+
+<span class="token comment">// maps A=>0,B=>1..</span>
+<span class="token keyword">const</span> <span class="token keyword">static</span> <span class="token keyword">unsigned</span> <span class="token keyword">char</span> unb64<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+        <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">//10</span>
+        <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">//20</span>
+        <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">//30</span>
+        <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">//40</span>
+        <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">62</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">63</span><span class="token punctuation">,</span> <span class="token number">52</span><span class="token punctuation">,</span> <span class="token number">53</span><span class="token punctuation">,</span> <span class="token comment">//50</span>
+        <span class="token number">54</span><span class="token punctuation">,</span> <span class="token number">55</span><span class="token punctuation">,</span> <span class="token number">56</span><span class="token punctuation">,</span> <span class="token number">57</span><span class="token punctuation">,</span> <span class="token number">58</span><span class="token punctuation">,</span> <span class="token number">59</span><span class="token punctuation">,</span> <span class="token number">60</span><span class="token punctuation">,</span> <span class="token number">61</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">//60</span>
+        <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token comment">//70</span>
+        <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">,</span> <span class="token number">14</span><span class="token punctuation">,</span> <span class="token comment">//80</span>
+        <span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">,</span> <span class="token number">17</span><span class="token punctuation">,</span> <span class="token number">18</span><span class="token punctuation">,</span> <span class="token number">19</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">21</span><span class="token punctuation">,</span> <span class="token number">22</span><span class="token punctuation">,</span> <span class="token number">23</span><span class="token punctuation">,</span> <span class="token number">24</span><span class="token punctuation">,</span> <span class="token comment">//90</span>
+        <span class="token number">25</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">26</span><span class="token punctuation">,</span> <span class="token number">27</span><span class="token punctuation">,</span> <span class="token number">28</span><span class="token punctuation">,</span> <span class="token comment">//100</span>
+        <span class="token number">29</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">31</span><span class="token punctuation">,</span> <span class="token number">32</span><span class="token punctuation">,</span> <span class="token number">33</span><span class="token punctuation">,</span> <span class="token number">34</span><span class="token punctuation">,</span> <span class="token number">35</span><span class="token punctuation">,</span> <span class="token number">36</span><span class="token punctuation">,</span> <span class="token number">37</span><span class="token punctuation">,</span> <span class="token number">38</span><span class="token punctuation">,</span> <span class="token comment">//110</span>
+        <span class="token number">39</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">,</span> <span class="token number">41</span><span class="token punctuation">,</span> <span class="token number">42</span><span class="token punctuation">,</span> <span class="token number">43</span><span class="token punctuation">,</span> <span class="token number">44</span><span class="token punctuation">,</span> <span class="token number">45</span><span class="token punctuation">,</span> <span class="token number">46</span><span class="token punctuation">,</span> <span class="token number">47</span><span class="token punctuation">,</span> <span class="token number">48</span><span class="token punctuation">,</span> <span class="token comment">//120</span>
+        <span class="token number">49</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">,</span> <span class="token number">51</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">//130</span>
+        <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">//140</span>
+        <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">//150</span>
+        <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">//160</span>
+        <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">//170</span>
+        <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">//180</span>
+        <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">//190</span>
+        <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">//200</span>
+        <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">//210</span>
+        <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">//220</span>
+        <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">//230</span>
+        <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">//240</span>
+        <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">//250</span>
+        <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span> <span class="token comment">// This array has 256 elements</span>
+
+<span class="token comment">// Converts binary data of length=len to base64 characters.</span>
+<span class="token comment">// Length of the resultant string is stored in flen</span>
+<span class="token comment">// (you must pass pointer flen).</span>
+<span class="token keyword">char</span> <span class="token operator">*</span><span class="token function">base64</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">void</span> <span class="token operator">*</span>binaryData<span class="token punctuation">,</span> <span class="token keyword">int</span> len<span class="token punctuation">,</span> <span class="token keyword">int</span> <span class="token operator">*</span>flen<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">const</span> <span class="token keyword">unsigned</span> <span class="token keyword">char</span> <span class="token operator">*</span>bin <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">unsigned</span> <span class="token keyword">char</span> <span class="token operator">*</span><span class="token punctuation">)</span> binaryData<span class="token punctuation">;</span>
+    <span class="token keyword">char</span> <span class="token operator">*</span>res<span class="token punctuation">;</span>
+
+    <span class="token keyword">int</span> rc <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">// result counter</span>
+    <span class="token keyword">int</span> byteNo<span class="token punctuation">;</span> <span class="token comment">// I need this after the loop</span>
+
+    <span class="token keyword">int</span> modulusLen <span class="token operator">=</span> len <span class="token operator">%</span> <span class="token number">3</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> pad <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>modulusLen <span class="token operator">&amp;</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>modulusLen <span class="token operator">&amp;</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">>></span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 2 gives 1 and 1 gives 2, but 0 gives 0.</span>
+
+    <span class="token operator">*</span>flen <span class="token operator">=</span> <span class="token number">4</span> <span class="token operator">*</span> <span class="token punctuation">(</span>len <span class="token operator">+</span> pad<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">3</span><span class="token punctuation">;</span>
+    res <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token operator">*</span><span class="token punctuation">)</span> <span class="token function">malloc</span><span class="token punctuation">(</span><span class="token operator">*</span>flen <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// and one for the null</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>res<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">"ERROR: base64 could not allocate enough memory."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">"I must stop because I could not get enough"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>byteNo <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> byteNo <span class="token operator">&lt;=</span> len <span class="token operator">-</span> <span class="token number">3</span><span class="token punctuation">;</span> byteNo <span class="token operator">+=</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">unsigned</span> <span class="token keyword">char</span> BYTE0 <span class="token operator">=</span> bin<span class="token punctuation">[</span>byteNo<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">unsigned</span> <span class="token keyword">char</span> BYTE1 <span class="token operator">=</span> bin<span class="token punctuation">[</span>byteNo <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">unsigned</span> <span class="token keyword">char</span> BYTE2 <span class="token operator">=</span> bin<span class="token punctuation">[</span>byteNo <span class="token operator">+</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        res<span class="token punctuation">[</span>rc<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> b64<span class="token punctuation">[</span>BYTE0 <span class="token operator">>></span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        res<span class="token punctuation">[</span>rc<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> b64<span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">0x3</span> <span class="token operator">&amp;</span> BYTE0<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token number">4</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span>BYTE1 <span class="token operator">>></span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        res<span class="token punctuation">[</span>rc<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> b64<span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">0x0f</span> <span class="token operator">&amp;</span> BYTE1<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span>BYTE2 <span class="token operator">>></span> <span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        res<span class="token punctuation">[</span>rc<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> b64<span class="token punctuation">[</span><span class="token number">0x3f</span> <span class="token operator">&amp;</span> BYTE2<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>pad <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        res<span class="token punctuation">[</span>rc<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> b64<span class="token punctuation">[</span>bin<span class="token punctuation">[</span>byteNo<span class="token punctuation">]</span> <span class="token operator">>></span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        res<span class="token punctuation">[</span>rc<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> b64<span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token number">0x3</span> <span class="token operator">&amp;</span> bin<span class="token punctuation">[</span>byteNo<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        res<span class="token punctuation">[</span>rc<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'='</span><span class="token punctuation">;</span>
+        res<span class="token punctuation">[</span>rc<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'='</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>pad <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        res<span class="token punctuation">[</span>rc<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> b64<span class="token punctuation">[</span>bin<span class="token punctuation">[</span>byteNo<span class="token punctuation">]</span> <span class="token operator">>></span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        res<span class="token punctuation">[</span>rc<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> b64<span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">0x3</span> <span class="token operator">&amp;</span> bin<span class="token punctuation">[</span>byteNo<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token number">4</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span>bin<span class="token punctuation">[</span>byteNo <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">>></span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        res<span class="token punctuation">[</span>rc<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> b64<span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token number">0x0f</span> <span class="token operator">&amp;</span> bin<span class="token punctuation">[</span>byteNo <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        res<span class="token punctuation">[</span>rc<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'='</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    res<span class="token punctuation">[</span>rc<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">// NULL TERMINATOR! ;)</span>
+    <span class="token keyword">return</span> res<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">unsigned</span> <span class="token keyword">char</span> <span class="token operator">*</span><span class="token function">unbase64</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span>ascii<span class="token punctuation">,</span> <span class="token keyword">int</span> len<span class="token punctuation">,</span> <span class="token keyword">int</span> <span class="token operator">*</span>flen<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">const</span> <span class="token keyword">unsigned</span> <span class="token keyword">char</span> <span class="token operator">*</span>safeAsciiPtr <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">unsigned</span> <span class="token keyword">char</span> <span class="token operator">*</span><span class="token punctuation">)</span> ascii<span class="token punctuation">;</span>
+    <span class="token keyword">unsigned</span> <span class="token keyword">char</span> <span class="token operator">*</span>bin<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> cb <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> charNo<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> pad <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>len <span class="token operator">&lt;</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">// 2 accesses below would be OOB.</span>
+        <span class="token comment">// catch empty string, return NULL as result.</span>
+        <span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">"ERROR: You passed an invalid base64 string (too short). You get NULL back."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token operator">*</span>flen <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>safeAsciiPtr<span class="token punctuation">[</span>len <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'='</span><span class="token punctuation">)</span> <span class="token operator">++</span>pad<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>safeAsciiPtr<span class="token punctuation">[</span>len <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'='</span><span class="token punctuation">)</span> <span class="token operator">++</span>pad<span class="token punctuation">;</span>
+
+    <span class="token operator">*</span>flen <span class="token operator">=</span> <span class="token number">3</span> <span class="token operator">*</span> len <span class="token operator">/</span> <span class="token number">4</span> <span class="token operator">-</span> pad<span class="token punctuation">;</span>
+    bin <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">unsigned</span> <span class="token keyword">char</span> <span class="token operator">*</span><span class="token punctuation">)</span> <span class="token function">malloc</span><span class="token punctuation">(</span><span class="token operator">*</span>flen<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>bin<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">"ERROR: unbase64 could not allocate enough memory."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">"I must stop because I could not get enough"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>charNo <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> charNo <span class="token operator">&lt;=</span> len <span class="token operator">-</span> <span class="token number">4</span> <span class="token operator">-</span> pad<span class="token punctuation">;</span> charNo <span class="token operator">+=</span> <span class="token number">4</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">int</span> A <span class="token operator">=</span> unb64<span class="token punctuation">[</span>safeAsciiPtr<span class="token punctuation">[</span>charNo<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> B <span class="token operator">=</span> unb64<span class="token punctuation">[</span>safeAsciiPtr<span class="token punctuation">[</span>charNo <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> C <span class="token operator">=</span> unb64<span class="token punctuation">[</span>safeAsciiPtr<span class="token punctuation">[</span>charNo <span class="token operator">+</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> D <span class="token operator">=</span> unb64<span class="token punctuation">[</span>safeAsciiPtr<span class="token punctuation">[</span>charNo <span class="token operator">+</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+        bin<span class="token punctuation">[</span>cb<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span>A <span class="token operator">&lt;&lt;</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">|</span> <span class="token punctuation">(</span>B <span class="token operator">>></span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        bin<span class="token punctuation">[</span>cb<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span>B <span class="token operator">&lt;&lt;</span> <span class="token number">4</span><span class="token punctuation">)</span> <span class="token operator">|</span> <span class="token punctuation">(</span>C <span class="token operator">>></span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        bin<span class="token punctuation">[</span>cb<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span>C <span class="token operator">&lt;&lt;</span> <span class="token number">6</span><span class="token punctuation">)</span> <span class="token operator">|</span> <span class="token punctuation">(</span>D<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>pad <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">int</span> A <span class="token operator">=</span> unb64<span class="token punctuation">[</span>safeAsciiPtr<span class="token punctuation">[</span>charNo<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> B <span class="token operator">=</span> unb64<span class="token punctuation">[</span>safeAsciiPtr<span class="token punctuation">[</span>charNo <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> C <span class="token operator">=</span> unb64<span class="token punctuation">[</span>safeAsciiPtr<span class="token punctuation">[</span>charNo <span class="token operator">+</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+        bin<span class="token punctuation">[</span>cb<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span>A <span class="token operator">&lt;&lt;</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">|</span> <span class="token punctuation">(</span>B <span class="token operator">>></span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        bin<span class="token punctuation">[</span>cb<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span>B <span class="token operator">&lt;&lt;</span> <span class="token number">4</span><span class="token punctuation">)</span> <span class="token operator">|</span> <span class="token punctuation">(</span>C <span class="token operator">>></span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>pad <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">int</span> A <span class="token operator">=</span> unb64<span class="token punctuation">[</span>safeAsciiPtr<span class="token punctuation">[</span>charNo<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> B <span class="token operator">=</span> unb64<span class="token punctuation">[</span>safeAsciiPtr<span class="token punctuation">[</span>charNo <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+        bin<span class="token punctuation">[</span>cb<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span>A <span class="token operator">&lt;&lt;</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">|</span> <span class="token punctuation">(</span>B <span class="token operator">>></span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">return</span> bin<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">endif</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="main-cpp"><a href="#main-cpp" class="headerlink" title="main.cpp"></a>main.cpp</h4><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;string.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;openssl/rsa.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;openssl/engine.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;openssl/pem.h></span></span>
+
+<span class="token comment">// I'm not using BIO for base64 encoding/decoding.  It is difficult to use.</span>
+<span class="token comment">// Using superwills' Nibble And A Half instead</span>
+<span class="token comment">// https://github.com/superwills/NibbleAndAHalf/blob/master/NibbleAndAHalf/base64.h</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">"base64.h"</span></span>
+
+<span class="token comment">// The PADDING parameter means RSA will pad your data for you</span>
+<span class="token comment">// if it is not exactly the right size</span>
+<span class="token comment">//#define PADDING RSA_PKCS1_OAEP_PADDING</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token expression">PADDING RSA_PKCS1_PADDING</span></span>
+<span class="token comment">//#define PADDING RSA_NO_PADDING</span>
+
+RSA <span class="token operator">*</span><span class="token function">loadPUBLICKeyFromString</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span>publicKeyStr<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// A BIO is an I/O abstraction (Byte I/O?)</span>
+
+    <span class="token comment">// BIO_new_mem_buf: Create a read-only bio buf with data</span>
+    <span class="token comment">// in string passed. -1 means string is null terminated,</span>
+    <span class="token comment">// so BIO_new_mem_buf can find the dataLen itself.</span>
+    <span class="token comment">// Since BIO_new_mem_buf will be READ ONLY, it's fine that publicKeyStr is const.</span>
+    BIO <span class="token operator">*</span>bio <span class="token operator">=</span> <span class="token function">BIO_new_mem_buf</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">void</span> <span class="token operator">*</span><span class="token punctuation">)</span> publicKeyStr<span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// -1: assume string is null terminated</span>
+
+    <span class="token function">BIO_set_flags</span><span class="token punctuation">(</span>bio<span class="token punctuation">,</span> BIO_FLAGS_BASE64_NO_NL<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// NO NL</span>
+
+    <span class="token comment">// Load the RSA key from the BIO</span>
+    RSA <span class="token operator">*</span>rsaPubKey <span class="token operator">=</span> <span class="token function">PEM_read_bio_RSA_PUBKEY</span><span class="token punctuation">(</span>bio<span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>rsaPubKey<span class="token punctuation">)</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"ERROR: Could not load PUBLIC KEY!  PEM_read_bio_RSA_PUBKEY FAILED: %s\n"</span><span class="token punctuation">,</span>
+               <span class="token function">ERR_error_string</span><span class="token punctuation">(</span><span class="token function">ERR_get_error</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token function">BIO_free</span><span class="token punctuation">(</span>bio<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> rsaPubKey<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+RSA <span class="token operator">*</span><span class="token function">loadPRIVATEKeyFromString</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span>privateKeyStr<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    BIO <span class="token operator">*</span>bio <span class="token operator">=</span> <span class="token function">BIO_new_mem_buf</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">void</span> <span class="token operator">*</span><span class="token punctuation">)</span> privateKeyStr<span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//BIO_set_flags( bio, BIO_FLAGS_BASE64_NO_NL ) ; // NO NL</span>
+    RSA <span class="token operator">*</span>rsaPrivKey <span class="token operator">=</span> <span class="token function">PEM_read_bio_RSAPrivateKey</span><span class="token punctuation">(</span>bio<span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>rsaPrivKey<span class="token punctuation">)</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"ERROR: Could not load PRIVATE KEY!  PEM_read_bio_RSAPrivateKey FAILED: %s\n"</span><span class="token punctuation">,</span>
+               <span class="token function">ERR_error_string</span><span class="token punctuation">(</span><span class="token function">ERR_get_error</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token function">BIO_free</span><span class="token punctuation">(</span>bio<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> rsaPrivKey<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">unsigned</span> <span class="token keyword">char</span> <span class="token operator">*</span><span class="token function">rsaEncrypt</span><span class="token punctuation">(</span>RSA <span class="token operator">*</span>pubKey<span class="token punctuation">,</span> <span class="token keyword">const</span> <span class="token keyword">unsigned</span> <span class="token keyword">char</span> <span class="token operator">*</span>str<span class="token punctuation">,</span> <span class="token keyword">int</span> dataSize<span class="token punctuation">,</span> <span class="token keyword">int</span> <span class="token operator">*</span>resultLen<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> rsaLen <span class="token operator">=</span> <span class="token function">RSA_size</span><span class="token punctuation">(</span>pubKey<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">unsigned</span> <span class="token keyword">char</span> <span class="token operator">*</span>ed <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">unsigned</span> <span class="token keyword">char</span> <span class="token operator">*</span><span class="token punctuation">)</span> <span class="token function">malloc</span><span class="token punctuation">(</span>rsaLen<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// RSA_public_encrypt() returns the size of the encrypted data</span>
+    <span class="token comment">// (i.e., RSA_size(rsa)). RSA_private_decrypt()</span>
+    <span class="token comment">// returns the size of the recovered plaintext.</span>
+    <span class="token operator">*</span>resultLen <span class="token operator">=</span> <span class="token function">RSA_public_encrypt</span><span class="token punctuation">(</span>dataSize<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">unsigned</span> <span class="token keyword">char</span> <span class="token operator">*</span><span class="token punctuation">)</span> str<span class="token punctuation">,</span> ed<span class="token punctuation">,</span> pubKey<span class="token punctuation">,</span> PADDING<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">*</span>resultLen <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"ERROR: RSA_public_encrypt: %s\n"</span><span class="token punctuation">,</span> <span class="token function">ERR_error_string</span><span class="token punctuation">(</span><span class="token function">ERR_get_error</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> ed<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">unsigned</span> <span class="token keyword">char</span> <span class="token operator">*</span><span class="token function">rsaDecrypt</span><span class="token punctuation">(</span>RSA <span class="token operator">*</span>privKey<span class="token punctuation">,</span> <span class="token keyword">const</span> <span class="token keyword">unsigned</span> <span class="token keyword">char</span> <span class="token operator">*</span>encryptedData<span class="token punctuation">,</span> <span class="token keyword">int</span> <span class="token operator">*</span>resultLen<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> rsaLen <span class="token operator">=</span> <span class="token function">RSA_size</span><span class="token punctuation">(</span>privKey<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// That's how many bytes the decrypted data would be</span>
+
+    <span class="token keyword">unsigned</span> <span class="token keyword">char</span> <span class="token operator">*</span>decryptedBin <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">unsigned</span> <span class="token keyword">char</span> <span class="token operator">*</span><span class="token punctuation">)</span> <span class="token function">malloc</span><span class="token punctuation">(</span>rsaLen<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">*</span>resultLen <span class="token operator">=</span> <span class="token function">RSA_private_decrypt</span><span class="token punctuation">(</span><span class="token function">RSA_size</span><span class="token punctuation">(</span>privKey<span class="token punctuation">)</span><span class="token punctuation">,</span> encryptedData<span class="token punctuation">,</span> decryptedBin<span class="token punctuation">,</span> privKey<span class="token punctuation">,</span> PADDING<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">*</span>resultLen <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"ERROR: RSA_private_decrypt: %s\n"</span><span class="token punctuation">,</span> <span class="token function">ERR_error_string</span><span class="token punctuation">(</span><span class="token function">ERR_get_error</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> decryptedBin<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">unsigned</span> <span class="token keyword">char</span> <span class="token operator">*</span><span class="token function">makeAlphaString</span><span class="token punctuation">(</span><span class="token keyword">int</span> dataSize<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">unsigned</span> <span class="token keyword">char</span> <span class="token operator">*</span>s <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">unsigned</span> <span class="token keyword">char</span> <span class="token operator">*</span><span class="token punctuation">)</span> <span class="token function">malloc</span><span class="token punctuation">(</span>dataSize<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">int</span> i<span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> dataSize<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+        s<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">65</span> <span class="token operator">+</span> i<span class="token punctuation">;</span>
+    s<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token comment">//NULL TERMINATOR ;)</span>
+
+    <span class="token keyword">return</span> s<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// You may need to encrypt several blocks of binary data (each has a maximum size</span>
+<span class="token comment">// limited by pubKey).  You shoudn't try to encrypt more than</span>
+<span class="token comment">// RSA_LEN( pubKey ) bytes into some packet.</span>
+<span class="token comment">// returns base64( rsa encrypt( &lt;&lt;binary data>> ) )</span>
+<span class="token comment">// base64OfRsaEncrypted()</span>
+<span class="token comment">// base64StringOfRSAEncrypted</span>
+<span class="token comment">// rsaEncryptThenBase64</span>
+<span class="token keyword">char</span> <span class="token operator">*</span><span class="token function">rsaEncryptThenBase64</span><span class="token punctuation">(</span>RSA <span class="token operator">*</span>pubKey<span class="token punctuation">,</span> <span class="token keyword">unsigned</span> <span class="token keyword">char</span> <span class="token operator">*</span>binaryData<span class="token punctuation">,</span> <span class="token keyword">int</span> binaryDataLen<span class="token punctuation">,</span> <span class="token keyword">int</span> <span class="token operator">*</span>outLen<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> encryptedDataLen<span class="token punctuation">;</span>
+
+    <span class="token comment">// RSA encryption with public key</span>
+    <span class="token keyword">unsigned</span> <span class="token keyword">char</span> <span class="token operator">*</span>encrypted <span class="token operator">=</span> <span class="token function">rsaEncrypt</span><span class="token punctuation">(</span>pubKey<span class="token punctuation">,</span> binaryData<span class="token punctuation">,</span> binaryDataLen<span class="token punctuation">,</span> <span class="token operator">&amp;</span>encryptedDataLen<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// To base 64</span>
+    <span class="token keyword">int</span> asciiBase64EncLen<span class="token punctuation">;</span>
+    <span class="token keyword">char</span> <span class="token operator">*</span>asciiBase64Enc <span class="token operator">=</span> <span class="token function">base64</span><span class="token punctuation">(</span>encrypted<span class="token punctuation">,</span> encryptedDataLen<span class="token punctuation">,</span> <span class="token operator">&amp;</span>asciiBase64EncLen<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Destroy the encrypted data (we are using the base64 version of it)</span>
+    <span class="token function">free</span><span class="token punctuation">(</span>encrypted<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Return the base64 version of the encrypted data</span>
+    <span class="token keyword">return</span> asciiBase64Enc<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// rsaDecryptOfUnbase64()</span>
+<span class="token comment">// rsaDecryptBase64String()</span>
+<span class="token comment">// unbase64ThenRSADecrypt()</span>
+<span class="token comment">// rsaDecryptThisBase64()</span>
+<span class="token keyword">unsigned</span> <span class="token keyword">char</span> <span class="token operator">*</span><span class="token function">rsaDecryptThisBase64</span><span class="token punctuation">(</span>RSA <span class="token operator">*</span>privKey<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>base64String<span class="token punctuation">,</span> <span class="token keyword">int</span> <span class="token operator">*</span>outLen<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> encBinLen<span class="token punctuation">;</span>
+    <span class="token keyword">unsigned</span> <span class="token keyword">char</span> <span class="token operator">*</span>encBin <span class="token operator">=</span> <span class="token function">unbase64</span><span class="token punctuation">(</span>base64String<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span> <span class="token function">strlen</span><span class="token punctuation">(</span>base64String<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>encBinLen<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// rsaDecrypt assumes length of encBin based on privKey</span>
+    <span class="token keyword">unsigned</span> <span class="token keyword">char</span> <span class="token operator">*</span>decryptedBin <span class="token operator">=</span> <span class="token function">rsaDecrypt</span><span class="token punctuation">(</span>privKey<span class="token punctuation">,</span> encBin<span class="token punctuation">,</span> outLen<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">free</span><span class="token punctuation">(</span>encBin<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> decryptedBin<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token function">ERR_load_crypto_strings</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">"We are going to: rsa_decrypt( unbase64( base64( rsa_encrypt( &lt;&lt;binary data>> ) ) ) )"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// public key</span>
+    <span class="token comment">// http://srdevspot.blogspot.ca/2011/08/openssl-error0906d064pem.html</span>
+    <span class="token comment">//1. The file must contain:</span>
+    <span class="token comment">//-----BEGIN CERTIFICATE-----</span>
+    <span class="token comment">//on a separate line (i.e. it must be terminated with a newline).</span>
+    <span class="token comment">//2. Each line of "gibberish" must be 64 characters wide.</span>
+    <span class="token comment">//3. The file must end with:</span>
+    <span class="token comment">//-----END CERTIFICATE-----</span>
+    <span class="token comment">// YOUR PUBLIC KEY MUST CONTAIN NEWLINES.  If it doesn't (ie if you generated it with</span>
+    <span class="token comment">// something like</span>
+    <span class="token comment">// ssh-keygen -t rsa -C "you@example.com"</span>
+    <span class="token comment">// ) THEN YOU MUST INSERT NEWLINES EVERY 64 CHRS (just line it up with how I have it here</span>
+    <span class="token comment">// or with how the ssh-keygen private key is formatted by default)</span>
+    <span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span>b64_pKey <span class="token operator">=</span> <span class="token string">"-----BEGIN PUBLIC KEY-----\n"</span>
+                           <span class="token string">"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA3zEZvnmvHhFMRuRt9XwLdvlrdAMvUJU4AeGUV59MYu4ZmM0drkHcpQR5nOMRq9nmeWtKKxM2oD/RSrGZ6EftfBgUD/vYZHwtstbtYNhM2eT5CQuTEnbSa86LItkjRwELfFnIoEKClitMGy8Nkk0dyJeqqFbF1tO3Xu/xCMqOS/rdK3YPEnpdwKYX07zrCy1MX9gMAirmOwm8h7XfP/WvM6EGT2BcmfTlcajwjZ15EHHl3aTzjCuwxzeMbt39f1p0Bx/zZBIt/yjjuX6FfiWfpKHYRPWqrVnp0wh7xbhIc9AOKU3OsQGNDby828kV6B03tixRJfbejMIJ3gVgTubg2wIDAQAB\n"</span>
+                           <span class="token string">"-----END PUBLIC KEY-----\n"</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// private key</span>
+    <span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span>b64priv_key <span class="token operator">=</span> <span class="token string">"-----BEGIN RSA PRIVATE KEY-----\n"</span>
+                              <span class="token string">"MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDfMRm+ea8eEUxG5G31fAt2+Wt0Ay9QlTgB4ZRXn0xi7hmYzR2uQdylBHmc4xGr2eZ5a0orEzagP9FKsZnoR+18GBQP+9hkfC2y1u1g2EzZ5PkJC5MSdtJrzosi2SNHAQt8WcigQoKWK0wbLw2STR3Il6qoVsXW07de7/EIyo5L+t0rdg8Sel3AphfTvOsLLUxf2AwCKuY7CbyHtd8/9a8zoQZPYFyZ9OVxqPCNnXkQceXdpPOMK7DHN4xu3f1/WnQHH/NkEi3/KOO5foV+JZ+kodhE9aqtWenTCHvFuEhz0A4pTc6xAY0NvLzbyRXoHTe2LFEl9t6MwgneBWBO5uDbAgMBAAECggEBAJCHlDszQ0I+Q124+Le6DxaJJ5sloNMW/gDB2jTvlCCQPQUk9m5sefxmLHZ62GunnEbOQmYod/xHtzkeTyMKyO/OC9fZ52QSwekIowlOqF2Fl/rSgve2+EYVpyX25JBLTevFnFSjHTsvaIZF7wzpYTsPc9S09EJMMXeJ+1UNDh6GbESknJvGPTpICdWcKbaArlqKFjiCeEZLwej5pIqQ5zgZ3Kk/1Hm6b1ut0EYblDoPFPto1sp+MzzDvyp8g/uwFUW+UvhbK69r73eyM4+S5LH1fqXq2/q+7V9IvOaz6D+BpDGqINia3ko49N4OdaUVt7uO7RGrXFW4D1lGoK0VqQkCgYEA92vErW0qsTRBpNtTHiXmHe6+/HVzqj7jZMkUL187KvioJqRgc2JxuAAT2HhJt1xuEeKtIGXJ/DSISXv3JS191nc9yG7ofWpxWw20T0LjdsZxnIa8I9Zq1pO0t2ir9N8VkJ2mMMxrJAlQTmA9Q3MpOXB6AmGXHN9rLlMdpdk7saUCgYEA5u5DGXZW6aIbTVZxasWklCGOCEb8TFJQN4pY59M7XYcfO9tyfO+K/RneCRsZ0k5Sjcr6IL1tfOPcH5GTBmFdNbsmFHQY6fxVh5NOpyrdwh9gip+dRQG1bMOFna0oIQ8UevrhXB0QBpoCHR1F71qQ7YBIfkj6HsV4wIW8Wed2wH8CgYEAmAfibGZeC1D+3RvfsPC8u7vOIzbQgdXuyCk+e/VaWAc+26+5jGz7T4LMrwEK2t6yy86rbvLc8FofPHgt3uxbHINctWJg/V+Ak+CR4PpK5tr9SJ8J0EOalotgSirJLsg9agVU7ztMwnHupJpCSsXimObiMcBhqF4ob+immRgos/kCgYEAoy9E/S4xtoEV9+2Y0dF+PisD+fdne+tCwiyiLJeIwMumF5835O9E8RuhWh/rfEBad9YyMIaLYxCFUU2GbqDIxBpOi2+K13W3XsmKb/iLogyYJP0rnkLZ2FTGC6j7zXihiVHVhEkJNREJY1d3Pu9psFrRX2PkU3BJpwoaEhHNSbMCgYBWhuOmG9SwLtQQlluFYHy2RUmXA/nCplp/TarVmeGyoPqtKaBQ5dMAYvAJ7YQKm9VDL5ij8/0SQ9hvk7yk9/mdUbcivqj4vQUMSezsgJMEucLrDZwczIv0Fm62CUEk+LdayowALGyLWYBcnXtLIYn5mFv+7Rk/kyuYiMsIIvMBLg==\n"</span>
+                              <span class="token string">"-----END RSA PRIVATE KEY-----\n"</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// String to encrypt, INCLUDING NULL TERMINATOR:</span>
+    <span class="token keyword">int</span> dataSize <span class="token operator">=</span> <span class="token number">37</span><span class="token punctuation">;</span> <span class="token comment">// 128 for NO PADDING, __ANY SIZE UNDER 128 B__ for RSA_PKCS1_PADDING</span>
+    <span class="token keyword">unsigned</span> <span class="token keyword">char</span> <span class="token operator">*</span>str <span class="token operator">=</span> <span class="token function">makeAlphaString</span><span class="token punctuation">(</span>dataSize<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\nThe original data is:\n%s\n\n"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token operator">*</span><span class="token punctuation">)</span> str<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// LOAD PUBLIC KEY</span>
+    RSA <span class="token operator">*</span>pubKey <span class="token operator">=</span> <span class="token function">loadPUBLICKeyFromString</span><span class="token punctuation">(</span>b64_pKey<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">int</span> asciiB64ELen<span class="token punctuation">;</span>
+    <span class="token keyword">char</span> <span class="token operator">*</span>asciiB64E <span class="token operator">=</span> <span class="token function">rsaEncryptThenBase64</span><span class="token punctuation">(</span>pubKey<span class="token punctuation">,</span> str<span class="token punctuation">,</span> dataSize<span class="token punctuation">,</span> <span class="token operator">&amp;</span>asciiB64ELen<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token function">RSA_free</span><span class="token punctuation">(</span>pubKey<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// free the public key when you are done all your encryption</span>
+
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Sending base64_encoded ( rsa_encrypted ( &lt;&lt;binary data>> ) ):\n%s\n"</span><span class="token punctuation">,</span> asciiB64E<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">"&lt;&lt;----------------  SENDING DATA ACROSS INTERWEBS  ---------------->>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">char</span> <span class="token operator">*</span>rxOverHTTP <span class="token operator">=</span> asciiB64E<span class="token punctuation">;</span> <span class="token comment">// Simulate Internet connection by a pointer reference</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\nRECEIVED some base64 string:\n%s\n"</span><span class="token punctuation">,</span> rxOverHTTP<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">"\n * * * What could it be?"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Now decrypt this very string with the private key</span>
+    RSA <span class="token operator">*</span>privKey <span class="token operator">=</span> <span class="token function">loadPRIVATEKeyFromString</span><span class="token punctuation">(</span>b64priv_key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Now we got the data at the server.  Time to decrypt it.</span>
+    <span class="token keyword">int</span> rBinLen<span class="token punctuation">;</span>
+    <span class="token keyword">unsigned</span> <span class="token keyword">char</span> <span class="token operator">*</span>rBin <span class="token operator">=</span> <span class="token function">rsaDecryptThisBase64</span><span class="token punctuation">(</span>privKey<span class="token punctuation">,</span> rxOverHTTP<span class="token punctuation">,</span> <span class="token operator">&amp;</span>rBinLen<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Decrypted %d bytes, the recovered data is:\n%.*s\n\n"</span><span class="token punctuation">,</span> rBinLen<span class="token punctuation">,</span> rBinLen<span class="token punctuation">,</span>
+           rBin<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// rBin is not necessarily NULL</span>
+    <span class="token comment">// terminated, so we only print rBinLen chrs</span>
+
+    <span class="token function">RSA_free</span><span class="token punctuation">(</span>privKey<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    bool allEq <span class="token operator">=</span> true<span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> dataSize<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+        allEq <span class="token operator">&amp;=</span> <span class="token punctuation">(</span>str<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> rBin<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>allEq<span class="token punctuation">)</span> <span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">"DATA TRANSFERRED INTACT!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">else</span> <span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">"ERROR, recovered binary does not match sent binary"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">free</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">free</span><span class="token punctuation">(</span>asciiB64E<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// rxOverHTTP</span>
+    <span class="token function">free</span><span class="token punctuation">(</span>rBin<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">ERR_free_strings</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+]]></content>
+      <categories>
+        <category>后台</category>
+      </categories>
   </entry>
   <entry>
     <title>写出优雅的JS代码</title>
