@@ -390,6 +390,53 @@
 ]]></content>
   </entry>
   <entry>
+    <title>终端基本操作命令</title>
+    <url>/2020/12/08/BasicTerminalOperation/</url>
+    <content><![CDATA[<p>终端Bash的一些日常操作,命令查找,光标控制等（更新中。。。）</p>
+<a id="more"></a>
+<p>参考<a href="https://github.com/jlevy/the-art-of-command-line/blob/master/README-zh.md">the-art-of-command-line</a></p>
+<ul>
+<li>搜索命令行历史记录: <code>ctrl-r</code><br>使用 <code>ctrl-r</code> 搜索命令行历史记录（按下按键之后，输入关键字便可以搜索，重复按下 <code>ctrl-r</code> 会向后查找匹配项，按下 <code>Enter</code> 键会执行当前匹配的命令，而按下右方向键会将匹配项放入当前行中，不会直接执行，以便做出修改）</li>
+<li>删除你键入的最后一个单词: <code>ctrl-w</code></li>
+<li>删除行内光标所在位置之前的内容: <code>ctrl-u</code></li>
+<li>以单词为单位移动光标: <code>alt-b</code> 和 <code>alt-f</code></li>
+<li>光标移至行首: <code>ctrl-a</code></li>
+<li>光标移至行尾: <code>ctrl-e</code></li>
+<li>删除光标至行尾的所有内容: <code>ctrl-k</code></li>
+<li>清屏: <code>ctrl-l</code> 或 <code>clear</code></li>
+<li>键入 man readline 可以查看 Bash 中的默认快捷键。内容有很多，例如 alt-. 循环地移向前一个参数，而 alt-* 可以展开通配符。</li>
+<li>键入 history 查看命令行历史记录，再用 !n（n 是命令编号）就可以再次执行。其中有许多缩写，最有用的大概就是 !$， 它用于指代上次键入的参数，而 !! 可以指代上次键入的命令了（参考 man 页面中的“HISTORY EXPANSION”）。不过这些功能，你也可以通过快捷键 ctrl-r 和 alt-. 来实现。</li>
+<li>cd 命令可以切换工作路径，输入 cd ~ 可以进入 home 目录。要访问你的 home 目录中的文件，可以使用前缀 ~（例如 ~/.bashrc）。在 sh 脚本里则用环境变量 $HOME 指代 home 目录的路径。</li>
+<li>回到前一个工作路径：cd -</li>
+<li>如果你输入命令的时候中途改了主意，按下 <code>alt-#</code> 在行首添加 # 把它当做注释再按下回车执行（或者依次按下 <code>ctrl-a</code>， <code>#</code>， <code>enter</code>）。这样做的话，之后借助命令行历史记录，你可以很方便恢复你刚才输入到一半的命令。</li>
+<li>展示进程树: <code>pstree -p</code></li>
+<li>使用 <code>pgrep</code> 和 <code>pkill</code> 根据名字查找进程或发送信号（-f 参数通常有用）</li>
+<li>了解你可以发往进程的信号的种类。比如，使用 <code>kill -STOP [pid]</code>停止一个进程。使用 <code>man 7 signal</code> 查看详细列表.</li>
+<li>使用 <code>nohup</code> 或 <code>disown</code> 使一个后台进程持续运行</li>
+<li>使用 <code>netstat -lntp</code> 或 <code>ss -plat</code> 检查哪些进程在监听端口（默认是检查 TCP 端口; 添加参数 -u 则检查 UDP 端口）或者 lsof -iTCP -sTCP:LISTEN -P -n (这也可以在 OS X 上运行)。</li>
+<li>使用 <code>uptime</code> 或 <code>w</code> 来查看系统已经运行多长时间。</li>
+<li>使用 <code>alias</code> 来创建常用命令的快捷形式。例如：<code>alias ll=&#39;ls -latr&#39;</code> 创建了一个新的命令别名 <code>ll</code>。</li>
+<li>可以把别名、shell 选项和常用函数保存在 <code>~/.bashrc</code></li>
+<li>要想在几台电脑中同步你的配置文件（例如 <code>.bashrc</code> 和 <code>.bash_profile</code>），可以借助 Git。</li>
+<li>在 Bash 中，同时重定向标准输出和标准错误：<code>some-command &gt;logfile 2&gt;&amp;1 </code>或者 <code>some-command &amp;&gt;logfile</code>。通常，为了保证命令不会在标准输入里残留一个未关闭的文件句柄捆绑在你当前所在的终端上，在命令后添加 <code>&lt;/dev/null</code> 是一个好习惯。</li>
+<li>对 ssh 设置做一些小优化可能是很有用的，例如这个 ~/.ssh/config 文件包含了防止特定网络环境下连接断开、压缩数据、多通道等选项：<pre class="line-numbers language-conf" data-language="conf"><code class="language-conf">TCPKeepAlive&#x3D;yes
+ServerAliveInterval&#x3D;15
+ServerAliveCountMax&#x3D;6
+Compression&#x3D;yes
+ControlMaster&#x3D;auto
+ControlPath&#x3D;&#x2F;tmp&#x2F;%r@%h:%p
+ControlPersist&#x3D;yes<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>一些其他的关于 ssh 的选项是与安全相关的，应当小心翼翼的使用。例如你应当只能在可信任的网络中启用 <code>StrictHostKeyChecking=no</code>，<code>ForwardAgent=yes</code>。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>运维</category>
+      </categories>
+      <tags>
+        <tag>Terminal</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>终端常用工具命令</title>
     <url>/2020/12/08/BasicTerminalCommand/</url>
     <content><![CDATA[<p>grep,awk,sed,lsof,curl,wget,tail,head,less,find,ssh,kill命令详解(更新中。。。)</p>
@@ -477,53 +524,6 @@ Context control:
 <h2 id="awk命令"><a href="#awk命令" class="headerlink" title="awk命令"></a>awk命令</h2><h3 id="说明-1"><a href="#说明-1" class="headerlink" title="说明"></a>说明</h3><p>AWK 是一种处理文本文件的语言，是一个强大的文本分析工具。<br>之所以叫 AWK 是因为其取了三位创始人 Alfred Aho，Peter Weinberger, 和 Brian Kernighan 的 Family Name 的首字符。</p>
 <p>Usage: awk [POSIX or GNU style options] -f progfile [–] file …<br>Usage: awk [POSIX or GNU style options] [–] ‘program’ file …<br>POSIX options:          GNU long options: (standard)<br>        -f progfile             –file=progfile<br>        -F fs                   –field-separator=fs<br>        -v var=val              –assign=var=val<br>Short options:          GNU long options: (extensions)<br>        -b                      –characters-as-bytes<br>        -c                      –traditional<br>        -C                      –copyright<br>        -d[file]                –dump-variables[=file]<br>        -e ‘program-text’       –source=’program-text’<br>        -E file                 –exec=file<br>        -g                      –gen-pot<br>        -h                      –help<br>        -L [fatal]              –lint[=fatal]<br>        -n                      –non-decimal-data<br>        -N                      –use-lc-numeric<br>        -O                      –optimize<br>        -p[file]                –profile[=file]<br>        -P                      –posix<br>        -r                      –re-interval<br>        -S                      –sandbox<br>        -t                      –lint-old<br>        -V                      –version</p>
 <h2 id="sed命令"><a href="#sed命令" class="headerlink" title="sed命令"></a>sed命令</h2><h3 id="说明-2"><a href="#说明-2" class="headerlink" title="说明"></a>说明</h3><p>sed 是利用脚本来处理文本文件。<br>sed 可依照脚本的指令来处理、编辑文本文件。<br>sed 主要用来自动编辑一个或多个文件、简化对文件的反复操作、编写转换程序等。</p>
-]]></content>
-      <categories>
-        <category>运维</category>
-      </categories>
-      <tags>
-        <tag>Terminal</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>终端基本操作命令</title>
-    <url>/2020/12/08/BasicTerminalOperation/</url>
-    <content><![CDATA[<p>终端Bash的一些日常操作,命令查找,光标控制等（更新中。。。）</p>
-<a id="more"></a>
-<p>参考<a href="https://github.com/jlevy/the-art-of-command-line/blob/master/README-zh.md">the-art-of-command-line</a></p>
-<ul>
-<li>搜索命令行历史记录: <code>ctrl-r</code><br>使用 <code>ctrl-r</code> 搜索命令行历史记录（按下按键之后，输入关键字便可以搜索，重复按下 <code>ctrl-r</code> 会向后查找匹配项，按下 <code>Enter</code> 键会执行当前匹配的命令，而按下右方向键会将匹配项放入当前行中，不会直接执行，以便做出修改）</li>
-<li>删除你键入的最后一个单词: <code>ctrl-w</code></li>
-<li>删除行内光标所在位置之前的内容: <code>ctrl-u</code></li>
-<li>以单词为单位移动光标: <code>alt-b</code> 和 <code>alt-f</code></li>
-<li>光标移至行首: <code>ctrl-a</code></li>
-<li>光标移至行尾: <code>ctrl-e</code></li>
-<li>删除光标至行尾的所有内容: <code>ctrl-k</code></li>
-<li>清屏: <code>ctrl-l</code> 或 <code>clear</code></li>
-<li>键入 man readline 可以查看 Bash 中的默认快捷键。内容有很多，例如 alt-. 循环地移向前一个参数，而 alt-* 可以展开通配符。</li>
-<li>键入 history 查看命令行历史记录，再用 !n（n 是命令编号）就可以再次执行。其中有许多缩写，最有用的大概就是 !$， 它用于指代上次键入的参数，而 !! 可以指代上次键入的命令了（参考 man 页面中的“HISTORY EXPANSION”）。不过这些功能，你也可以通过快捷键 ctrl-r 和 alt-. 来实现。</li>
-<li>cd 命令可以切换工作路径，输入 cd ~ 可以进入 home 目录。要访问你的 home 目录中的文件，可以使用前缀 ~（例如 ~/.bashrc）。在 sh 脚本里则用环境变量 $HOME 指代 home 目录的路径。</li>
-<li>回到前一个工作路径：cd -</li>
-<li>如果你输入命令的时候中途改了主意，按下 <code>alt-#</code> 在行首添加 # 把它当做注释再按下回车执行（或者依次按下 <code>ctrl-a</code>， <code>#</code>， <code>enter</code>）。这样做的话，之后借助命令行历史记录，你可以很方便恢复你刚才输入到一半的命令。</li>
-<li>展示进程树: <code>pstree -p</code></li>
-<li>使用 <code>pgrep</code> 和 <code>pkill</code> 根据名字查找进程或发送信号（-f 参数通常有用）</li>
-<li>了解你可以发往进程的信号的种类。比如，使用 <code>kill -STOP [pid]</code>停止一个进程。使用 <code>man 7 signal</code> 查看详细列表.</li>
-<li>使用 <code>nohup</code> 或 <code>disown</code> 使一个后台进程持续运行</li>
-<li>使用 <code>netstat -lntp</code> 或 <code>ss -plat</code> 检查哪些进程在监听端口（默认是检查 TCP 端口; 添加参数 -u 则检查 UDP 端口）或者 lsof -iTCP -sTCP:LISTEN -P -n (这也可以在 OS X 上运行)。</li>
-<li>使用 <code>uptime</code> 或 <code>w</code> 来查看系统已经运行多长时间。</li>
-<li>使用 <code>alias</code> 来创建常用命令的快捷形式。例如：<code>alias ll=&#39;ls -latr&#39;</code> 创建了一个新的命令别名 <code>ll</code>。</li>
-<li>可以把别名、shell 选项和常用函数保存在 <code>~/.bashrc</code></li>
-<li>要想在几台电脑中同步你的配置文件（例如 <code>.bashrc</code> 和 <code>.bash_profile</code>），可以借助 Git。</li>
-<li>在 Bash 中，同时重定向标准输出和标准错误：<code>some-command &gt;logfile 2&gt;&amp;1 </code>或者 <code>some-command &amp;&gt;logfile</code>。通常，为了保证命令不会在标准输入里残留一个未关闭的文件句柄捆绑在你当前所在的终端上，在命令后添加 <code>&lt;/dev/null</code> 是一个好习惯。</li>
-<li>对 ssh 设置做一些小优化可能是很有用的，例如这个 ~/.ssh/config 文件包含了防止特定网络环境下连接断开、压缩数据、多通道等选项：<pre class="line-numbers language-conf" data-language="conf"><code class="language-conf">TCPKeepAlive&#x3D;yes
-ServerAliveInterval&#x3D;15
-ServerAliveCountMax&#x3D;6
-Compression&#x3D;yes
-ControlMaster&#x3D;auto
-ControlPath&#x3D;&#x2F;tmp&#x2F;%r@%h:%p
-ControlPersist&#x3D;yes<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li>一些其他的关于 ssh 的选项是与安全相关的，应当小心翼翼的使用。例如你应当只能在可信任的网络中启用 <code>StrictHostKeyChecking=no</code>，<code>ForwardAgent=yes</code>。</li>
-</ul>
 ]]></content>
       <categories>
         <category>运维</category>
@@ -1200,6 +1200,38 @@ window<span class="token punctuation">.</span><span class="token function">addEv
       </tags>
   </entry>
   <entry>
+    <title>Mysql</title>
+    <url>/2020/12/04/Mysql/</url>
+    <content><![CDATA[<p>使用MySql遇到的问题总结</p>
+<a id="more"></a>
+<h2 id="Mybatis-Plus批量存储慢"><a href="#Mybatis-Plus批量存储慢" class="headerlink" title="Mybatis-Plus批量存储慢"></a>Mybatis-Plus批量存储慢</h2><p>mybatis-plus提供的saveBatch方法批量存储时为单条sql执行，存储速度慢，不适合大量数据存储，官方提供了insert into的sample需要开发人员自己单独集成。<br><a href="https://gitee.com/baomidou/mybatis-plus-samples/tree/master/mybatis-plus-sample-deluxe">官方示例</a></p>
+<h2 id="Mysql导入大文件"><a href="#Mysql导入大文件" class="headerlink" title="Mysql导入大文件"></a>Mysql导入大文件</h2><p>Navicate执行大文件sql脚本时，速度慢还容易失败。所以直接在mysql中操作文件的导入。</p>
+<ul>
+<li>进入mysql<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">mysql <span class="token operator">-</span>u root <span class="token operator">-</span>p<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li>创建数据库<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">create</span> <span class="token keyword">database</span> <span class="token operator">&lt;</span>dbName<span class="token operator">></span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li>设置参数<br>如果不关闭log会导致binlog过大，使用navicate导入时，因为存储的binlog过大，导致mysql无法启动，删除binlog后mysql正常启动<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">set</span> sql_log_bin<span class="token operator">=</span><span class="token keyword">OFF</span><span class="token punctuation">;</span>
+<span class="token keyword">set</span> autocommit<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li>使用数据库<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">use</span> <span class="token operator">&lt;</span>dbName<span class="token operator">></span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li>开启事务<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">start</span> <span class="token keyword">transaction</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li>开始导入<br>sqlFilePath是你的sql文件路径<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">source <span class="token operator">&lt;</span>sqlFilePath<span class="token operator">></span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li>执行完成后提交<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">commit</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="记录binlog过大导致mysql无法启动的问题"><a href="#记录binlog过大导致mysql无法启动的问题" class="headerlink" title="记录binlog过大导致mysql无法启动的问题"></a>记录binlog过大导致mysql无法启动的问题</h2>错误信息<pre class="line-numbers language-log" data-language="log"><code class="language-log">2020-07-28T02:23:28.308800Z 0 [ERROR] [MY-010846] [Server] MYSQL_BIN_LOG::open_purge_index_file failed to open register file.
+2020-07-28T02:23:28.308848Z 0 [ERROR] [MY-010817] [Server] MYSQL_BIN_LOG::open_index_file failed to sync the index file.
+2020-07-28T02:23:28.308882Z 0 [ERROR] [MY-010119] [Server] Aborting<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+解决办法<br>删除/var/lib/mysql目录下的binlog文件，docker容器启动的mysql则删除映射目录下的binlog文件<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> /var/lib/mysql
+<span class="token function">rm</span> -rf binlog.0*
+<span class="token builtin class-name">echo</span> <span class="token operator">></span> binlog.index<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>Mysql</tag>
+        <tag>运维</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Jmeter性能测试</title>
     <url>/2020/12/25/Jmeter/</url>
     <content><![CDATA[<p>测试工具Jmeter教程</p>
@@ -1230,38 +1262,6 @@ window<span class="token punctuation">.</span><span class="token function">addEv
       </categories>
       <tags>
         <tag>工具</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Mysql</title>
-    <url>/2020/12/04/Mysql/</url>
-    <content><![CDATA[<p>使用MySql遇到的问题总结</p>
-<a id="more"></a>
-<h2 id="Mybatis-Plus批量存储慢"><a href="#Mybatis-Plus批量存储慢" class="headerlink" title="Mybatis-Plus批量存储慢"></a>Mybatis-Plus批量存储慢</h2><p>mybatis-plus提供的saveBatch方法批量存储时为单条sql执行，存储速度慢，不适合大量数据存储，官方提供了insert into的sample需要开发人员自己单独集成。<br><a href="https://gitee.com/baomidou/mybatis-plus-samples/tree/master/mybatis-plus-sample-deluxe">官方示例</a></p>
-<h2 id="Mysql导入大文件"><a href="#Mysql导入大文件" class="headerlink" title="Mysql导入大文件"></a>Mysql导入大文件</h2><p>Navicate执行大文件sql脚本时，速度慢还容易失败。所以直接在mysql中操作文件的导入。</p>
-<ul>
-<li>进入mysql<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">mysql <span class="token operator">-</span>u root <span class="token operator">-</span>p<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li>创建数据库<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">create</span> <span class="token keyword">database</span> <span class="token operator">&lt;</span>dbName<span class="token operator">></span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li>设置参数<br>如果不关闭log会导致binlog过大，使用navicate导入时，因为存储的binlog过大，导致mysql无法启动，删除binlog后mysql正常启动<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">set</span> sql_log_bin<span class="token operator">=</span><span class="token keyword">OFF</span><span class="token punctuation">;</span>
-<span class="token keyword">set</span> autocommit<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
-<li>使用数据库<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">use</span> <span class="token operator">&lt;</span>dbName<span class="token operator">></span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li>开启事务<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">start</span> <span class="token keyword">transaction</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li>开始导入<br>sqlFilePath是你的sql文件路径<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">source <span class="token operator">&lt;</span>sqlFilePath<span class="token operator">></span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li>执行完成后提交<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">commit</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2 id="记录binlog过大导致mysql无法启动的问题"><a href="#记录binlog过大导致mysql无法启动的问题" class="headerlink" title="记录binlog过大导致mysql无法启动的问题"></a>记录binlog过大导致mysql无法启动的问题</h2>错误信息<pre class="line-numbers language-log" data-language="log"><code class="language-log">2020-07-28T02:23:28.308800Z 0 [ERROR] [MY-010846] [Server] MYSQL_BIN_LOG::open_purge_index_file failed to open register file.
-2020-07-28T02:23:28.308848Z 0 [ERROR] [MY-010817] [Server] MYSQL_BIN_LOG::open_index_file failed to sync the index file.
-2020-07-28T02:23:28.308882Z 0 [ERROR] [MY-010119] [Server] Aborting<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-解决办法<br>删除/var/lib/mysql目录下的binlog文件，docker容器启动的mysql则删除映射目录下的binlog文件<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> /var/lib/mysql
-<span class="token function">rm</span> -rf binlog.0*
-<span class="token builtin class-name">echo</span> <span class="token operator">></span> binlog.index<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
-</ul>
-]]></content>
-      <categories>
-        <category>数据库</category>
-      </categories>
-      <tags>
-        <tag>Mysql</tag>
-        <tag>运维</tag>
       </tags>
   </entry>
   <entry>
@@ -1443,118 +1443,6 @@ pegasus_http_port_t            tcp      <span class="token number">5988</span><s
       <categories>
         <category>运维</category>
       </categories>
-  </entry>
-  <entry>
-    <title>神一样的自动化测试工具分享</title>
-    <url>/2020/12/04/Test/</url>
-    <content><![CDATA[<p>0基础自动化测试，有手就行</p>
-<a id="more"></a>
-<h2 id="TestProject"><a href="#TestProject" class="headerlink" title="TestProject"></a>TestProject</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><ul>
-<li><a href="https://testproject.io/">TestProject</a>是一款基于Selenium和Appium之上的开源工具，永久免费，提供了录制、回放等功能，只需要安装TestProject的安装包(支持windows、mac、linux)就可以使用计算机上所有的浏览器和设备，支持Web和App自动化测试。</li>
-<li><a href="https://docs.testproject.io/">官方文档</a></li>
-<li><a href="https://app.testproject.io/#/agents">下载安装</a>客户端。</li>
-</ul>
-<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>使用分三步： </p>
-<ol>
-<li><a href="(https://testproject.io/)">注册</a>testproject账户，用邮箱注册即可，注册好账户后登陆进入主界面</li>
-<li>下载代理（agents），代理的作用是控制电脑本地的浏览器，并且它会自动检测电脑上面装有哪些浏览器，非常方便，不需要额外下载各种浏览器的驱动，用过selenium做过自动化测试的同学应该知道，不同的浏览器需要下载相应的驱动，但是testproject并不需要，只要安装agent并启动它。</li>
-<li>在<code>Aagents</code>页面下点击<code>Register Agent</code>，它会自动检测将我们本地启动的agent注册上来</li>
-</ol>
-<h3 id="工作台介绍"><a href="#工作台介绍" class="headerlink" title="工作台介绍"></a>工作台介绍</h3><p><img src="/2020/12/04/Test/dashboard.png"></p>
-<ol>
-<li>Home: 主页，上面显示一些推荐的插件（addons），这些插件功能很强大，后面我们会介绍一些常用的插件，右侧显示我们最近运行过的测试脚本，最下面显示的是我们创建的项目，默认会有个<code>My First Project</code>的示例项目。</li>
-<li>Monitor: 监控页，显示最近的测试数量，job数量等一些参数指标。</li>
-<li>Addons: 插件页面，用到的比较多，这里可以从社区添加插件，也可以添加自己开发的插件。</li>
-<li>Reports: 这个页面可以看到最近一段时间的测试情况。成功或者失败的统计指标等。</li>
-<li>Agents: agents页面可以看到当前账户注册了哪些agent(代理)，就是我们安装的客户端。可以对agent进行删除，添加等操作。agent状态有Disconnect,Starting,Ready,Busy,Recording等状态，当为Ready状态的Agent代表是可以使用的。</li>
-<li>Integrations: 这个页面包含开放的SDK，API，Webhooks，自定义插件开发等。</li>
-<li><code>New Test</code>按钮可以快速的创建一个测试脚本。</li>
-<li><code>Invite Teamate</code>可以邀请成员到你的项目中。所以TestProject是支持团队协作的，可以共享测试脚本，非常的人性化。</li>
-</ol>
-<h3 id="添加Agents"><a href="#添加Agents" class="headerlink" title="添加Agents"></a>添加Agents</h3><p>在<code>agents</code>页签下可以点击<code>Register Agents</code>来连接我们安装在电脑本地的agent（代理）,如果agent已经在电脑上面运行了，点击添加时只需要填写一下agent的自定义名称，testproject会自动添加上，除了添加本地的agent还可以添加其他远程机器上的agent,只需要填上其他机器的ip地址即可。<br><img src="/2020/12/04/Test/agentAdd.png"><br>在列表中看到我们的agent状态为<code>ready</code>代表已经添加成功，可以录制和执行测试脚本了。<br><img src="/2020/12/04/Test/agentReady.png"></p>
-<h3 id="Demo演示"><a href="#Demo演示" class="headerlink" title="Demo演示"></a>Demo演示</h3><ol>
-<li><p>第一次进入Home页，可以看到testproject自动创建了一个<code>My First Project</code>的示例项目，我们可以点击运行，选择自己的<code>agent</code>运行该项目。<br><img src="/runDemoTest.png"></p>
-</li>
-<li><p>录制页面介绍，打开录制页，页签依次是TEST(测试信息)，STEPS(测试步骤)，PARAMETERS(参数)，LOCATOR(元素定位)，EXPLORER(页面元素详情)</p>
-</li>
-<li><p>RECORD按钮按下开始记录我们的操作，RUN执行选中的步骤(STEPS)，不选则执行所有的测试步骤。</p>
-</li>
-<li><p>最底部的两个按钮<code>Add step manually</code>和<code>Add test as a step</code>分别是手动添加测试步骤和将测试集合（由多个测试步骤的组成的组）作为测试步骤添加到当前测试中。</p>
-<img src="/2020/12/04/Test/record.png" class="" width="500" height="700">
-<h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3></li>
-<li><p>在录制界面，鼠标移动到需要添加动作的元素上，通过连按两次<code>shift</code>，会弹出菜单，选择菜单上我们需要的功能吗，就可以对该元素添加相应的动作或者事件。如<code>click</code>(点击事件)，<code>type text</code>(输入文本)等操作。以输入文本为例：<br><img src="/2020/12/04/Test/elementAction.png"></p>
-</li>
-<li><p>编辑<code>type text</code>事件<br><img src="/2020/12/04/Test/saveStep.png"></p>
-</li>
-<li><p>运行刚刚保存的测试步骤<br><img src="/2020/12/04/Test/runStep.png"></p>
-</li>
-<li><p>查看运行结果<br><img src="/2020/12/04/Test/runResult.png"></p>
-</li>
-</ol>
-<h3 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h3><p>TestProject提供了各种插件来辅助我们自动化测试，比如：<code>String Utils</code>(字符串工具)，<code>File Uploader</code>(文件上传)，<code>MySQL Database</code>(Mysql数据库连接)等。各种常见场景都提供了相应的插件使用，如果官方提供的插件不能满足我们的使用需求，我们还可以自己开发插件使用。官方提供了插件开发的<a href="https://github.com/testproject-io/addons/tree/master/Examples">示例Demo</a></p>
-<h2 id="XPATH教程"><a href="#XPATH教程" class="headerlink" title="XPATH教程"></a>XPATH教程</h2><h3 id="匹配节点"><a href="#匹配节点" class="headerlink" title="匹配节点"></a>匹配节点</h3><table>
-<thead>
-<tr>
-<th>表达式</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>/</td>
-<td>从根节点选取</td>
-</tr>
-<tr>
-<td>//</td>
-<td>忽略位置匹配所有符合条件的节点</td>
-</tr>
-<tr>
-<td>.</td>
-<td>当前节点</td>
-</tr>
-<tr>
-<td>..</td>
-<td>当前节点的父节点</td>
-</tr>
-<tr>
-<td>@</td>
-<td>选择属性</td>
-</tr>
-</tbody></table>
-<h3 id="示例说明"><a href="#示例说明" class="headerlink" title="示例说明"></a>示例说明</h3><table>
-<thead>
-<tr>
-<th>表达式</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>//input[@placeholder = ‘请输入姓名’]</td>
-<td>匹配所有的input节点并且placeholder属性等于“请输入姓名”</td>
-</tr>
-<tr>
-<td>/html/body//div[contains(@class,”el-select-dropdown__wrap”)]</td>
-<td>匹配/html/body下div class包含“el-select-dropdown__wrap”</td>
-</tr>
-<tr>
-<td>/html/body//div[contains(@style,”position: absolute;”)]</td>
-<td>匹配/html/body下div style包含“position: absolute;”</td>
-</tr>
-<tr>
-<td>/ul//li[. = ‘是’]</td>
-<td>匹配ul标签下li标签内容为“是”的节点</td>
-</tr>
-<tr>
-<td>(//input[@type=’file’])[1]</td>
-<td>匹配input type属性为file的节点，并选取匹配到的第一个</td>
-</tr>
-</tbody></table>
-]]></content>
-      <categories>
-        <category>测试</category>
-      </categories>
-      <tags>
-        <tag>工具</tag>
-      </tags>
   </entry>
   <entry>
     <title>Npm相关的一些小东西</title>
@@ -1788,6 +1676,118 @@ yum <span class="token function">install</span> -y cronolog<span aria-hidden="tr
       </tags>
   </entry>
   <entry>
+    <title>神一样的自动化测试工具分享</title>
+    <url>/2020/12/04/Test/</url>
+    <content><![CDATA[<p>0基础自动化测试，有手就行</p>
+<a id="more"></a>
+<h2 id="TestProject"><a href="#TestProject" class="headerlink" title="TestProject"></a>TestProject</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><ul>
+<li><a href="https://testproject.io/">TestProject</a>是一款基于Selenium和Appium之上的开源工具，永久免费，提供了录制、回放等功能，只需要安装TestProject的安装包(支持windows、mac、linux)就可以使用计算机上所有的浏览器和设备，支持Web和App自动化测试。</li>
+<li><a href="https://docs.testproject.io/">官方文档</a></li>
+<li><a href="https://app.testproject.io/#/agents">下载安装</a>客户端。</li>
+</ul>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>使用分三步： </p>
+<ol>
+<li><a href="(https://testproject.io/)">注册</a>testproject账户，用邮箱注册即可，注册好账户后登陆进入主界面</li>
+<li>下载代理（agents），代理的作用是控制电脑本地的浏览器，并且它会自动检测电脑上面装有哪些浏览器，非常方便，不需要额外下载各种浏览器的驱动，用过selenium做过自动化测试的同学应该知道，不同的浏览器需要下载相应的驱动，但是testproject并不需要，只要安装agent并启动它。</li>
+<li>在<code>Aagents</code>页面下点击<code>Register Agent</code>，它会自动检测将我们本地启动的agent注册上来</li>
+</ol>
+<h3 id="工作台介绍"><a href="#工作台介绍" class="headerlink" title="工作台介绍"></a>工作台介绍</h3><p><img src="/2020/12/04/Test/dashboard.png"></p>
+<ol>
+<li>Home: 主页，上面显示一些推荐的插件（addons），这些插件功能很强大，后面我们会介绍一些常用的插件，右侧显示我们最近运行过的测试脚本，最下面显示的是我们创建的项目，默认会有个<code>My First Project</code>的示例项目。</li>
+<li>Monitor: 监控页，显示最近的测试数量，job数量等一些参数指标。</li>
+<li>Addons: 插件页面，用到的比较多，这里可以从社区添加插件，也可以添加自己开发的插件。</li>
+<li>Reports: 这个页面可以看到最近一段时间的测试情况。成功或者失败的统计指标等。</li>
+<li>Agents: agents页面可以看到当前账户注册了哪些agent(代理)，就是我们安装的客户端。可以对agent进行删除，添加等操作。agent状态有Disconnect,Starting,Ready,Busy,Recording等状态，当为Ready状态的Agent代表是可以使用的。</li>
+<li>Integrations: 这个页面包含开放的SDK，API，Webhooks，自定义插件开发等。</li>
+<li><code>New Test</code>按钮可以快速的创建一个测试脚本。</li>
+<li><code>Invite Teamate</code>可以邀请成员到你的项目中。所以TestProject是支持团队协作的，可以共享测试脚本，非常的人性化。</li>
+</ol>
+<h3 id="添加Agents"><a href="#添加Agents" class="headerlink" title="添加Agents"></a>添加Agents</h3><p>在<code>agents</code>页签下可以点击<code>Register Agents</code>来连接我们安装在电脑本地的agent（代理）,如果agent已经在电脑上面运行了，点击添加时只需要填写一下agent的自定义名称，testproject会自动添加上，除了添加本地的agent还可以添加其他远程机器上的agent,只需要填上其他机器的ip地址即可。<br><img src="/2020/12/04/Test/agentAdd.png"><br>在列表中看到我们的agent状态为<code>ready</code>代表已经添加成功，可以录制和执行测试脚本了。<br><img src="/2020/12/04/Test/agentReady.png"></p>
+<h3 id="Demo演示"><a href="#Demo演示" class="headerlink" title="Demo演示"></a>Demo演示</h3><ol>
+<li><p>第一次进入Home页，可以看到testproject自动创建了一个<code>My First Project</code>的示例项目，我们可以点击运行，选择自己的<code>agent</code>运行该项目。<br><img src="/runDemoTest.png"></p>
+</li>
+<li><p>录制页面介绍，打开录制页，页签依次是TEST(测试信息)，STEPS(测试步骤)，PARAMETERS(参数)，LOCATOR(元素定位)，EXPLORER(页面元素详情)</p>
+</li>
+<li><p>RECORD按钮按下开始记录我们的操作，RUN执行选中的步骤(STEPS)，不选则执行所有的测试步骤。</p>
+</li>
+<li><p>最底部的两个按钮<code>Add step manually</code>和<code>Add test as a step</code>分别是手动添加测试步骤和将测试集合（由多个测试步骤的组成的组）作为测试步骤添加到当前测试中。</p>
+<img src="/2020/12/04/Test/record.png" class="" width="500" height="700">
+<h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3></li>
+<li><p>在录制界面，鼠标移动到需要添加动作的元素上，通过连按两次<code>shift</code>，会弹出菜单，选择菜单上我们需要的功能吗，就可以对该元素添加相应的动作或者事件。如<code>click</code>(点击事件)，<code>type text</code>(输入文本)等操作。以输入文本为例：<br><img src="/2020/12/04/Test/elementAction.png"></p>
+</li>
+<li><p>编辑<code>type text</code>事件<br><img src="/2020/12/04/Test/saveStep.png"></p>
+</li>
+<li><p>运行刚刚保存的测试步骤<br><img src="/2020/12/04/Test/runStep.png"></p>
+</li>
+<li><p>查看运行结果<br><img src="/2020/12/04/Test/runResult.png"></p>
+</li>
+</ol>
+<h3 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h3><p>TestProject提供了各种插件来辅助我们自动化测试，比如：<code>String Utils</code>(字符串工具)，<code>File Uploader</code>(文件上传)，<code>MySQL Database</code>(Mysql数据库连接)等。各种常见场景都提供了相应的插件使用，如果官方提供的插件不能满足我们的使用需求，我们还可以自己开发插件使用。官方提供了插件开发的<a href="https://github.com/testproject-io/addons/tree/master/Examples">示例Demo</a></p>
+<h2 id="XPATH教程"><a href="#XPATH教程" class="headerlink" title="XPATH教程"></a>XPATH教程</h2><h3 id="匹配节点"><a href="#匹配节点" class="headerlink" title="匹配节点"></a>匹配节点</h3><table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>/</td>
+<td>从根节点选取</td>
+</tr>
+<tr>
+<td>//</td>
+<td>忽略位置匹配所有符合条件的节点</td>
+</tr>
+<tr>
+<td>.</td>
+<td>当前节点</td>
+</tr>
+<tr>
+<td>..</td>
+<td>当前节点的父节点</td>
+</tr>
+<tr>
+<td>@</td>
+<td>选择属性</td>
+</tr>
+</tbody></table>
+<h3 id="示例说明"><a href="#示例说明" class="headerlink" title="示例说明"></a>示例说明</h3><table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>//input[@placeholder = ‘请输入姓名’]</td>
+<td>匹配所有的input节点并且placeholder属性等于“请输入姓名”</td>
+</tr>
+<tr>
+<td>/html/body//div[contains(@class,”el-select-dropdown__wrap”)]</td>
+<td>匹配/html/body下div class包含“el-select-dropdown__wrap”</td>
+</tr>
+<tr>
+<td>/html/body//div[contains(@style,”position: absolute;”)]</td>
+<td>匹配/html/body下div style包含“position: absolute;”</td>
+</tr>
+<tr>
+<td>/ul//li[. = ‘是’]</td>
+<td>匹配ul标签下li标签内容为“是”的节点</td>
+</tr>
+<tr>
+<td>(//input[@type=’file’])[1]</td>
+<td>匹配input type属性为file的节点，并选取匹配到的第一个</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>我常用的一些网站</title>
     <url>/2020/12/04/WebSite/</url>
     <content><![CDATA[<p>一些不错的网站和学习内容</p>
@@ -1887,6 +1887,109 @@ yum <span class="token function">install</span> -y cronolog<span aria-hidden="tr
       <tags>
         <tag>java</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>TUS断点上传</title>
+    <url>/2022/06/23/Tus/</url>
+    <content><![CDATA[<p>使用<a href="https://tus.io/">tus</a>将文件上传到minio中，并结合后端接口做token校验</p>
+<a id="more"></a>
+<h2 id="使用Docker构建"><a href="#使用Docker构建" class="headerlink" title="使用Docker构建"></a>使用Docker构建</h2><h3 id="Dockerfile"><a href="#Dockerfile" class="headerlink" title="Dockerfile"></a>Dockerfile</h3><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'3.3'</span>
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+  <span class="token key atrule">tus-server</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> tusio/tusd
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> tus<span class="token punctuation">-</span>server
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> 1080<span class="token punctuation">:</span><span class="token number">1080</span>
+    <span class="token key atrule">privileged</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token key atrule">AWS_ACCESS_KEY_ID</span><span class="token punctuation">:</span> minioadmin
+      <span class="token key atrule">AWS_SECRET_ACCESS_KEY</span><span class="token punctuation">:</span> minioadmin
+      <span class="token key atrule">AWS_REGION</span><span class="token punctuation">:</span> us<span class="token punctuation">-</span>east<span class="token punctuation">-</span><span class="token number">1</span>
+    <span class="token key atrule">command</span><span class="token punctuation">:</span>
+      <span class="token punctuation">[</span><span class="token string">"--s3-bucket"</span><span class="token punctuation">,</span><span class="token string">"bucketName"</span><span class="token punctuation">,</span><span class="token string">"--s3-endpoint"</span><span class="token punctuation">,</span><span class="token string">"http://192.168.10.39:9000"</span><span class="token punctuation">,</span><span class="token string">"--base-path"</span><span class="token punctuation">,</span><span class="token string">"/files/"</span><span class="token punctuation">,</span><span class="token string">"--hooks-http-forward-headers"</span><span class="token punctuation">,</span><span class="token string">"Authorization"</span><span class="token punctuation">,</span><span class="token string">"--hooks-http"</span><span class="token punctuation">,</span><span class="token string">"http://192.168.10.35:80/oss/tus-hooks"</span><span class="token punctuation">,</span><span class="token string">"--hooks-enabled-events"</span><span class="token punctuation">,</span><span class="token string">"pre-create,post-receive,pre-finish,post-finish"</span><span class="token punctuation">]</span>
+<span class="token key atrule">networks</span><span class="token punctuation">:</span>
+  <span class="token key atrule">default</span><span class="token punctuation">:</span>
+    <span class="token key atrule">driver</span><span class="token punctuation">:</span> bridge<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h3><ul>
+<li><code>--s3-bucket</code> 对应的是bucket名称</li>
+<li><code>--s3-endpoint</code> 对应minIO的地址</li>
+<li><code>--base-path</code> tus的上传地址</li>
+<li><code>--hooks-http-forward-headers</code> 钩子回调时，需要转发的请求头，这边需要把业务方带的Authorization请求头转发给后端，用于鉴权</li>
+<li><code>--hooks-http</code> 钩子回调的后端地址，用于做一些中间操作，比如鉴权等</li>
+<li><code>--hooks-enabled-events</code> 哪些事件需要做回调，基本上是文件上传的一个生命周期内的回调事件。比如上传前，上传完成前，上传完成后等</li>
+</ul>
+<h3 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h3><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">docker-compose up -d<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="定义后端钩子接口"><a href="#定义后端钩子接口" class="headerlink" title="定义后端钩子接口"></a>定义后端钩子接口</h2><h3 id="伪代码逻辑"><a href="#伪代码逻辑" class="headerlink" title="伪代码逻辑"></a>伪代码逻辑</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@PostMapping</span><span class="token punctuation">(</span><span class="token string">"/oss/tus-hooks"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token class-name">Result</span> <span class="token function">verify</span><span class="token punctuation">(</span><span class="token class-name">HttpServletRequest</span> request<span class="token punctuation">,</span> <span class="token annotation punctuation">@RequestBody</span> <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">Object</span><span class="token punctuation">></span></span> map<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    ossService<span class="token punctuation">.</span><span class="token function">verify</span><span class="token punctuation">(</span>request<span class="token punctuation">,</span> map<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">success</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">verify</span><span class="token punctuation">(</span><span class="token class-name">HttpServletRequest</span> request<span class="token punctuation">,</span> <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">Object</span><span class="token punctuation">></span></span> map<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token class-name">String</span> token <span class="token operator">=</span> request<span class="token punctuation">.</span><span class="token function">getHeader</span><span class="token punctuation">(</span><span class="token string">"Authorization"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//校验token是否合法，伪代码，根据业务自定义</span>
+    <span class="token class-name">Assert</span><span class="token punctuation">.</span><span class="token function">isTrue</span><span class="token punctuation">(</span><span class="token function">checkToken</span><span class="token punctuation">(</span>token<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"无权操作"</span><span class="token punctuation">)</span>
+    <span class="token class-name">String</span> hookName <span class="token operator">=</span> request<span class="token punctuation">.</span><span class="token function">getHeader</span><span class="token punctuation">(</span><span class="token string">"hook-name"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token string">"post-finish"</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>hookName<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">//上传完成，得到文件信息,并存储到数据库中或者返回</span>
+        <span class="token class-name">TusDTO</span> tusDto <span class="token operator">=</span> <span class="token class-name">JSONUtil</span><span class="token punctuation">.</span><span class="token function">toBean</span><span class="token punctuation">(</span><span class="token class-name">JSONUtil</span><span class="token punctuation">.</span><span class="token function">toJsonStr</span><span class="token punctuation">(</span>map<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token class-name">TusDTO</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">save</span><span class="token punctuation">(</span>tusDto<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="TusDTO的json格式"><a href="#TusDTO的json格式" class="headerlink" title="TusDTO的json格式"></a>TusDTO的json格式</h3><pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+  <span class="token property">"upload"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+    <span class="token property">"size"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+    <span class="token property">"metaData"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+      <span class="token property">"filename"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+      <span class="token property">"filetype"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+      <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+      <span class="token property">"relativePath"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+      <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">""</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token property">"storage"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+      <span class="token property">"bucket"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+      <span class="token property">"key"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+      <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">""</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token property">"httpRequest"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">"method"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+    <span class="token property">"uri"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+    <span class="token property">"remoteAddress"</span><span class="token operator">:</span> <span class="token string">""</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h2><h3 id="使用Uppy-js断点上传"><a href="#使用Uppy-js断点上传" class="headerlink" title="使用Uppy.js断点上传"></a>使用Uppy.js断点上传</h3><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token name">doctype</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Uppy<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://releases.transloadit.com/uppy/v2.3.2/uppy.min.css<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>drag-drop-area<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://releases.transloadit.com/uppy/v2.3.2/uppy.min.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+      <span class="token keyword">var</span> uppy <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Uppy<span class="token punctuation">.</span>Core</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>Uppy<span class="token punctuation">.</span>Dashboard<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
+          inline<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+          target<span class="token operator">:</span> <span class="token string">'#drag-drop-area'</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+        <span class="token comment">// endpoint为tusdocker启动的接口地址 ，header中带上token</span>
+        <span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>Uppy<span class="token punctuation">.</span>Tus<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>endpoint<span class="token operator">:</span> <span class="token string">'http://10.66.38.175:1080/files/'</span><span class="token punctuation">,</span>headers<span class="token operator">:</span><span class="token punctuation">&#123;</span>
+          <span class="token string">"Authorization"</span><span class="token operator">:</span> <span class="token string">"Bearer 1aed50be-d6a8-4b72-9ae9-3cba0e83cc0d"</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+      uppy<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'complete'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">result</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Upload complete! We’ve uploaded these files:'</span><span class="token punctuation">,</span> result<span class="token punctuation">.</span>successful<span class="token punctuation">)</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+]]></content>
   </entry>
   <entry>
     <title>关于</title>
