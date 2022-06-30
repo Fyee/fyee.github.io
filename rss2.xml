@@ -15,8 +15,25 @@
     <atom:link href="https://fyee.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Thu, 23 Jun 2022 09:18:22 GMT</pubDate>
+    <pubDate>Thu, 30 Jun 2022 03:46:34 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>PaddleOCR图片文字识别</title>
+      <link>https://fyee.github.io/2022/06/30/PaddleOCR/</link>
+      <guid>https://fyee.github.io/2022/06/30/PaddleOCR/</guid>
+      <pubDate>Thu, 30 Jun 2022 02:03:29 GMT</pubDate>
+      
+      <description>&lt;p&gt;使用paddleOCR识别图片文字&lt;/p&gt;</description>
+      
+      
+      
+      
+      
+      
+      <comments>https://fyee.github.io/2022/06/30/PaddleOCR/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>TUS断点上传</title>
@@ -400,25 +417,6 @@
       
       
       <comments>https://fyee.github.io/2020/12/04/Java/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>Nginx常用脚本</title>
-      <link>https://fyee.github.io/2020/12/04/Nginx/</link>
-      <guid>https://fyee.github.io/2020/12/04/Nginx/</guid>
-      <pubDate>Fri, 04 Dec 2020 05:12:43 GMT</pubDate>
-      
-      <description>&lt;p&gt;Nginx一些部署时用到的脚本，记录一下，方便部署的时候复制粘贴^_^&lt;/p&gt;</description>
-      
-      
-      
-      
-      <category domain="https://fyee.github.io/categories/%E8%BF%90%E7%BB%B4/">运维</category>
-      
-      
-      
-      <comments>https://fyee.github.io/2020/12/04/Nginx/#disqus_thread</comments>
       
     </item>
     
